@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">4322_Term_Project</string>
+
+    <string name="user">User Name: </string>
+    <string name="pass">Password: </string>
+
+    <string name="loginButton">Login!</string>
+
+</resources>
