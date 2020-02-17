@@ -7,6 +7,7 @@
 
     <string name="loginButton">Login</string>
     <string name="signupText">Sign Up</string>
+    <string name="register">Register</string>
     <string name="title_activity_signup">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
