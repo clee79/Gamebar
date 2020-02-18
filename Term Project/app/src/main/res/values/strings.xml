@@ -5,6 +5,8 @@
     <string name="pass">Password </string>
     <string name="confirmPass">Confirm Password</string>
 
+    <string name="gamebar">GameBar</string>
+
     <string name="loginButton">Login</string>
     <string name="signupText">Sign Up</string>
     <string name="register">Register</string>
