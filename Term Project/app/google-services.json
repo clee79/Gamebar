@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "225662379733",
+    "firebase_url": "https://gamebar-666f8.firebaseio.com",
+    "project_id": "gamebar-666f8",
+    "storage_bucket": "gamebar-666f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225662379733:android:4dc58de9928842a2b7e45c",
+        "android_client_info": {
+          "package_name": "com.example.a4322_term_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225662379733-tkkeepi80c0mulh8tb86rhhrnrcjmq5m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlIR7NfrMY0dKQqIElsRfXG5EWBE2kztM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225662379733-tkkeepi80c0mulh8tb86rhhrnrcjmq5m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
