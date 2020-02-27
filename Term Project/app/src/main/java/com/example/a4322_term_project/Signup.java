@@ -3,6 +3,7 @@ package com.example.a4322_term_project;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Signup extends AppCompatActivity {
+    Intent intent;
     Button button;
     EditText username, password, confirmPassword;
 
@@ -49,6 +51,7 @@ public class Signup extends AppCompatActivity {
                 if (password.getText().toString().equals(confirmPassword.getText().toString())) {
 
                     if (password.getText().toString().length() > 5) {
+                        Log.d("PASSWORD VERIF", "Password passes tests.");
 
                         firebaseAuth.createUserWithEmailAndPassword(username.getText().toString(),
                                 confirmPassword.getText().toString())
@@ -67,7 +70,6 @@ public class Signup extends AppCompatActivity {
                                     }
                                 });
 
-                        Log.d("PASSWORD VERIF", "Password passes tests.");
                     } else {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(Signup.this, "Password length must be more than 5 characters."
