@@ -25,4 +25,6 @@
     <string name="sampleEmail">me@test.com</string>
     <string name="sampleName">Don Joe</string>
 
+    <string name="scanBar">Scan Table Barcode</string>
+
 </resources>
