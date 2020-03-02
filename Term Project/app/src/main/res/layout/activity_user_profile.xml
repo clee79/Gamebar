@@ -205,15 +205,15 @@
                 android:text="OTHER FIELD?"
                 />
         </LinearLayout>
-        <Button
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/signoutTextView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/buttonstyle"
-            android:text="Challenge"
-            android:textColor="#fff" />
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:text="@string/logout" />
     </LinearLayout>
+
+
 
 </LinearLayout>

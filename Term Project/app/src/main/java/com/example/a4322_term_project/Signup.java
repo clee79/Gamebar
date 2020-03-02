@@ -25,8 +25,8 @@ public class Signup extends AppCompatActivity {
     Intent intent;
     Button button;
     ImageView back;
-    TextView signup;
-    EditText username, password, confirmPassword;
+    TextView signup, gotoLogin;
+    EditText email, password, confirmPassword;
     Animation fromleft, fromright, fromtop;
 
     // When user clicks on signup, display progress bar
@@ -44,10 +44,11 @@ public class Signup extends AppCompatActivity {
         fromright = AnimationUtils.loadAnimation(this, R.anim.fromright);
         fromtop = AnimationUtils.loadAnimation(this, R.anim.fromtop);
 
+        gotoLogin = findViewById(R.id.gotoLoginTextView);
         signup = findViewById(R.id.signupTextView);
         back = findViewById(R.id.backButtonDrawable);
         button = findViewById(R.id.registerButton);
-        username = findViewById(R.id.usernameTextEdit);
+        email = findViewById(R.id.usernameTextEdit);
         password = findViewById(R.id.passwordTextEdit);
         confirmPassword = findViewById(R.id.confirmPasswordTextEdit);
         progressBar = findViewById(R.id.progressBar);
@@ -55,7 +56,7 @@ public class Signup extends AppCompatActivity {
         // Animation
         back.setAnimation(fromtop);
         signup.setAnimation(fromleft);
-        username.setAnimation(fromleft);
+        email.setAnimation(fromleft);
         password.setAnimation(fromright);
         confirmPassword.setAnimation(fromleft);
         button.setAnimation(fromright);
@@ -68,22 +69,34 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
+                String emailStr = email.getText().toString();
+                String passwordStr = password.getText().toString();
 
-                if (password.getText().toString().equals(confirmPassword.getText().toString())) {
+                if (emailStr.isEmpty()) {
+                    Toast.makeText(Signup.this, "Email is empty."
+                            , Toast.LENGTH_SHORT).show();
+                    email.requestFocus();
+                }
 
-                    if (password.getText().toString().length() > 5) {
+                if (passwordStr.equals(confirmPassword.getText().toString())) {
+
+                    if (passwordStr.length() > 5) {
                         Log.d("PASSWORD VERIF", "Password passes tests.");
 
-                        firebaseAuth.createUserWithEmailAndPassword(username.getText().toString(),
+                        firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(),
                                 confirmPassword.getText().toString())
                                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                                         progressBar.setVisibility(View.GONE);
 
                                         if (task.isSuccessful()) {
+                                            intent = new Intent(getApplicationContext(), Login.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             Toast.makeText(getApplicationContext(), "Congrats! You're in.", Toast.LENGTH_SHORT)
                                                     .show();
+                                            startActivity(intent);
                                         } else {
                                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT)
                                                     .show();
@@ -95,16 +108,26 @@ public class Signup extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(Signup.this, "Password length must be more than 5 characters."
                                 , Toast.LENGTH_SHORT).show();
+                        password.requestFocus();
                     }
                 } else {
                     progressBar.setVisibility(View.GONE);
 
                     Toast.makeText(Signup.this, "Passwords do not equal each other."
                             , Toast.LENGTH_SHORT).show();
+                    password.requestFocus();
                 }
             }
         });
 
+        // If user wants to login while on the signup activity, go to Login activity
+        gotoLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+            }
+        });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
