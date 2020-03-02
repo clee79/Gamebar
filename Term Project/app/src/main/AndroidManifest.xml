@@ -23,7 +23,7 @@
             android:name=".ui.login.SignupActivity"
             android:label="@string/title_activity_signup" />
         -->
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Login" />
     </application>
 
 </manifest>

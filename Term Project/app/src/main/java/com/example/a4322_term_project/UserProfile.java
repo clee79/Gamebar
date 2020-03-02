@@ -29,11 +29,11 @@ public class UserProfile extends AppCompatActivity {
             }
         });
 
-        // Brings user back to MainActivity for now, can be change
+        // Brings user back to Login for now, can be change
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
 
             }
