@@ -6,19 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserProfile extends AppCompatActivity {
     Intent intent;
-    Button edit;
+    Button edit, signout;
+    EditText email, phone, other;
     ImageView back;
-    TextView signout;
-    FirebaseAuth mFirebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +27,21 @@ public class UserProfile extends AppCompatActivity {
 
         edit = findViewById(R.id.editButton);
         back = findViewById(R.id.backButtonDrawable);
-        signout = findViewById(R.id.signoutTextView);
+        signout = findViewById(R.id.signoutButton);
+        email = findViewById(R.id.emailEditText);
+        phone = findViewById(R.id.phoneEditText);
+        other = findViewById(R.id.otherEditText);
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Change the uneditable EditText (email, name, phone, etc.) to editable
+                // NOW THESE ARE ENABLED, NEED TO GET NEW VALUES AND PUSH TO DB
+                // DONE BUTTON TO SAVE CHANGES
+                email.setEnabled(true);
+                phone.setEnabled(true);
+                other.setEnabled(true);
 
+                email.requestFocus();
             }
         });
 
@@ -52,11 +60,14 @@ public class UserProfile extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 // Sign user out
+                                Log.d("FIREBASE USER", FirebaseAuth.getInstance().getCurrentUser().toString());
                                 FirebaseAuth.getInstance().signOut();
+                                Log.d("FIREBASE USER", FirebaseAuth.getInstance().getCurrentUser().toString());
+
                                 // Go to home page
                                 intent = new Intent(getApplicationContext(), Home.class);
                                 startActivity(intent);
-                                dialog.cancel();
+                                finish();
                             }
                         });
 

@@ -58,6 +58,7 @@ public class Login extends AppCompatActivity {
         email.setAnimation(fromright);
         password.setAnimation(fromright);
         button.setAnimation(fromleft);
+        gotoSignup.setAnimation(fromleft);
 
         // Back button on click
         back.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +110,7 @@ public class Login extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Login.this, "Login failed! Try again.", Toast.LENGTH_SHORT).show();
                             } else {
+                                Log.d("FIREBASE USER LOGIN", FirebaseAuth.getInstance().getCurrentUser().toString());
                                 intent = new Intent(getApplicationContext(), UserProfile.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);

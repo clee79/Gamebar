@@ -71,7 +71,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/buttonstyle"
         android:text="@string/loginButton"
-        android:textColor="#ffffff"
+        android:textColor="@color/grayLight"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.779"
@@ -82,13 +82,13 @@
         android:id="@+id/goToSignupTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="224dp"
         android:text="@string/goToSignup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -60,6 +60,7 @@ public class Signup extends AppCompatActivity {
         password.setAnimation(fromright);
         confirmPassword.setAnimation(fromleft);
         button.setAnimation(fromright);
+        gotoLogin.setAnimation(fromleft);
 
         // Establish connection to firebase
         firebaseAuth = FirebaseAuth.getInstance();
