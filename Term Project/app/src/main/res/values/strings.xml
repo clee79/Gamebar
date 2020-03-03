@@ -21,6 +21,7 @@
     <string name="invalid_password">Password must be > 5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="edit">Edit</string>
+    <string name="done">Done</string>
     <string name="goToSignup">Don\'t have an account? Sign up here.</string>
     <string name="goToLogin">Already have an account? Login here.</string>
     <string name="logout">Logout</string>

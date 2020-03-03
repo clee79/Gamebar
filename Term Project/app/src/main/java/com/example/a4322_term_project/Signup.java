@@ -93,7 +93,8 @@ public class Signup extends AppCompatActivity {
                                         progressBar.setVisibility(View.GONE);
 
                                         if (task.isSuccessful()) {
-                                            intent = new Intent(getApplicationContext(), Login.class);
+                                            finish();
+                                            intent = new Intent(getApplicationContext(), UserProfile.class);
                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             Toast.makeText(getApplicationContext(), "Congrats! You're in.", Toast.LENGTH_SHORT)
                                                     .show();
@@ -125,6 +126,7 @@ public class Signup extends AppCompatActivity {
         gotoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
             }

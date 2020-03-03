@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        // Login logic
+        // Why exactly is this here?
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -100,6 +100,7 @@ public class Login extends AppCompatActivity {
                             , Toast.LENGTH_SHORT).show();
                     password.requestFocus();
                 } else {
+                    // Login logic
                     mFirebaseAuth.signInWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(Login.this,
                             new OnCompleteListener<AuthResult>() {
 
@@ -111,6 +112,7 @@ public class Login extends AppCompatActivity {
                                 Toast.makeText(Login.this, "Login failed! Try again.", Toast.LENGTH_SHORT).show();
                             } else {
                                 Log.d("FIREBASE USER LOGIN", FirebaseAuth.getInstance().getCurrentUser().toString());
+                                finish();
                                 intent = new Intent(getApplicationContext(), UserProfile.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -126,6 +128,7 @@ public class Login extends AppCompatActivity {
         gotoSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 intent = new Intent(getApplicationContext(), Signup.class);
                 startActivity(intent);
             }
@@ -135,6 +138,13 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart () {
         super.onStart();
+
+        // If user is already logged in, go straight to UserProfile activity
+        if (mFirebaseAuth.getCurrentUser() != null) {
+            finish();
+            intent = new Intent(this, UserProfile.class);
+            startActivity(intent);
+        }
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 }
