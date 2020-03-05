@@ -10,7 +10,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46ec2677-d69d-4d89-8d7b-7ed57ee677c1" name="Default Changelist" comment="" />
+    <list default="true" id="46ec2677-d69d-4d89-8d7b-7ed57ee677c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_hub.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_hub.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,23 +87,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="330">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="210">
+              <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
               <folding>
-                <element signature="e#561#738#0" expanded="true" />
-                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#603#865#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
+                <element signature="e#903#1052#0" expanded="true" />
+                <element signature="e#1051#1052#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,16 +157,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Home.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_hub.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Home.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="82" />
-    <option name="y" value="105" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="52" />
+    <option name="y" value="154" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -339,8 +345,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
+    <frame x="52" y="154" width="1440" height="877" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18669528" />
@@ -352,9 +357,9 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" weight="0.3299363" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49928468" weight="0.3299363" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.49928468" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5007153" side_tool="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Build" order="5" weight="0.32866243" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
@@ -504,17 +509,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_hub.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -531,21 +525,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#561#738#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Home.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="317">
+          <caret line="30" column="47" lean-forward="true" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_hub.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding>
+            <element signature="e#603#865#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#903#1052#0" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
