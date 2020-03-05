@@ -31,6 +31,9 @@ public class Hub extends AppCompatActivity {
         qrCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent = new Intent(getApplicationContext(), QRCodeProcessor.class);
+                startActivity(intent);
+                finish();
                 // Go to QR code screen
             }
         });

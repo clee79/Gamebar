@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Hub"></activity>
         <activity android:name=".UserProfile"></activity>
         <activity android:name=".Signup" />
         <activity android:name=".Home">
@@ -41,7 +42,7 @@
             android:name=".ui.login.SignupActivity"
             android:label="@string/title_activity_signup" />
         -->
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Login" />
 
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode"></meta-data>
