@@ -5,19 +5,19 @@
 
     <SurfaceView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="600dp"
         android:id="@+id/cameraPreview"
         android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/barcodeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/barcodeText"
         android:layout_below="@+id/cameraPreview"
         android:layout_marginTop="30dp"
-        android:text="Focus on QR Code"
-        android:textSize="20sp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="@string/scanBar"
+        android:textSize="20sp" />
 
 
     <!--

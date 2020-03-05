@@ -87,6 +87,7 @@ public class QRCodeProcessor extends AppCompatActivity {
                             Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
                             textView.setText(qrCodes.valueAt(0).displayValue);
+
                         }
                     });
                 }
