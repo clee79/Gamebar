@@ -28,5 +28,6 @@
     <string name="sampleEmail">me@test.com</string>
     <string name="sampleName">Don Joe</string>
     <string name="profile">Profile</string>
+    <string name="qrScan">Scan a table</string>
 
 </resources>
