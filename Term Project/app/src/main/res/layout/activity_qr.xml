@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:id="@+id/cameraPreview"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/barcodeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cameraPreview"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/scanBar"
+        android:textSize="20sp" />
+
+
+    <!--
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtContent"/>
+
+    <Button
+        android:id="@+id/scanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scanBar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgview"/>
+        -->
+</RelativeLayout>

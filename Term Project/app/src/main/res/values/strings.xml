@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">4322_Term_Project</string>
+    <string name="app_name">Gamebar</string>
 
     <string name="user">User Name </string>
     <string name="pass">Password </string>
@@ -29,5 +29,7 @@
     <string name="sampleName">Don Joe</string>
     <string name="profile">Profile</string>
     <string name="qrScan">Scan a table</string>
+
+    <string name="scanBar">Scan Table Barcode</string>
 
 </resources>
