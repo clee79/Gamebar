@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        // Why exactly is this here?
+        //
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -88,39 +88,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 progress.setVisibility(View.VISIBLE);
 
-                String emailStr = email.getText().toString();
-                String passwordStr = password.getText().toString();
+                loginUser();
 
-                if (emailStr.isEmpty()) {
-                    Toast.makeText(Login.this, "Email is empty."
-                            , Toast.LENGTH_SHORT).show();
-                    email.requestFocus();
-                } else if (passwordStr.length() < 5) {
-                    Toast.makeText(Login.this, "Your password looks a little short... Give it another shot."
-                            , Toast.LENGTH_SHORT).show();
-                    password.requestFocus();
-                } else {
-                    // Login logic
-                    mFirebaseAuth.signInWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(Login.this,
-                            new OnCompleteListener<AuthResult>() {
-
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            progress.setVisibility(View.GONE);
-
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(Login.this, "Login failed! Try again.", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Log.d("FIREBASE USER LOGIN", FirebaseAuth.getInstance().getCurrentUser().toString());
-                                finish();
-                                intent = new Intent(getApplicationContext(), UserProfile.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent);
-
-                            }
-                        }
-                    });
-                }
             }
         });
 
@@ -146,5 +115,42 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
         }
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    private void loginUser() {
+        String emailStr = email.getText().toString();
+        String passwordStr = password.getText().toString();
+
+        if (emailStr.isEmpty()) {
+            Toast.makeText(Login.this, "Email is empty."
+                    , Toast.LENGTH_SHORT).show();
+            email.requestFocus();
+        } else if (passwordStr.length() < 5) {
+            Toast.makeText(Login.this, "Your password looks a little short... Give it another shot."
+                    , Toast.LENGTH_SHORT).show();
+            password.requestFocus();
+        } else {
+
+            // Login logic
+            mFirebaseAuth.signInWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(Login.this,
+                    new OnCompleteListener<AuthResult>() {
+
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            progress.setVisibility(View.GONE);
+
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(Login.this, "Login failed! Try again.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Log.d("FIREBASE USER LOGIN", FirebaseAuth.getInstance().getCurrentUser().toString());
+                                finish();
+                                intent = new Intent(getApplicationContext(), UserProfile.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+
+                            }
+                        }
+                    });
+        }
     }
 }

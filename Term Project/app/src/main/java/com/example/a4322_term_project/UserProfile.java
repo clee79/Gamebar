@@ -81,36 +81,7 @@ public class UserProfile extends AppCompatActivity {
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create alert dialog to prompt user if they are sure they want to
-                // sign out
-                AlertDialog.Builder signoutWarning = new AlertDialog.Builder(UserProfile.this);
-                signoutWarning.setMessage("Are you sure you want to sign out?");
-                signoutWarning.setCancelable(true);
-
-                signoutWarning.setPositiveButton(
-                        "Sign out",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                // Sign user out
-                                FirebaseAuth.getInstance().signOut();
-
-                                // Go to home page
-                                finish();
-                                intent = new Intent(getApplicationContext(), Home.class);
-                                startActivity(intent);
-                            }
-                        });
-
-                signoutWarning.setNegativeButton(
-                        "Cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-                AlertDialog alert = signoutWarning.create();
-                alert.show();
+                signoutUser();
             }
         });
 
@@ -135,6 +106,39 @@ public class UserProfile extends AppCompatActivity {
             intent = new Intent(this, Login.class);
             startActivity(intent);
         }
+    }
+
+    private void signoutUser() {
+        // Create alert dialog to prompt user if they are sure they want to
+        // sign out
+        AlertDialog.Builder signoutWarning = new AlertDialog.Builder(UserProfile.this);
+        signoutWarning.setMessage("Are you sure you want to sign out?");
+        signoutWarning.setCancelable(true);
+
+        signoutWarning.setPositiveButton(
+                "Sign out",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Sign user out
+                        FirebaseAuth.getInstance().signOut();
+
+                        // Go to home page
+                        finish();
+                        intent = new Intent(getApplicationContext(), Home.class);
+                        startActivity(intent);
+                    }
+                });
+
+        signoutWarning.setNegativeButton(
+                "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert = signoutWarning.create();
+        alert.show();
     }
     private void loadUserInformation() {
         FirebaseUser user = mAuth.getCurrentUser();

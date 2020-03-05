@@ -21,7 +21,6 @@ public class Home extends AppCompatActivity {
     Animation frombottom, fromtop;
     Intent intent;
     FirebaseAuth mFirebaseAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +57,6 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        // Login logic
-        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
-
-                if (firebaseUser != null) {
-                    intent = new Intent(getApplicationContext(), UserProfile.class);
-                } else {
-                    Toast.makeText(Home.this, "Login failed. Please try again.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
 
     }
     @Override
@@ -83,6 +69,5 @@ public class Home extends AppCompatActivity {
             intent = new Intent(this, UserProfile.class);
             startActivity(intent);
         }
-        //mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 }

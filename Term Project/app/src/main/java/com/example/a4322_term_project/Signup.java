@@ -72,39 +72,19 @@ public class Signup extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 String emailStr = email.getText().toString();
                 String passwordStr = password.getText().toString();
+                String passwordConfirmStr = confirmPassword.getText().toString();
 
                 if (emailStr.isEmpty()) {
-                    Toast.makeText(Signup.this, "Email is empty."
-                            , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Signup.this, "Email is empty.", Toast.LENGTH_SHORT).show();
                     email.requestFocus();
                 }
 
-                if (passwordStr.equals(confirmPassword.getText().toString())) {
+                if (passwordStr.equals(passwordConfirmStr)) {
 
+                    // All good, sign up the user
                     if (passwordStr.length() > 5) {
-                        Log.d("PASSWORD VERIF", "Password passes tests.");
 
-                        firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(),
-                                confirmPassword.getText().toString())
-                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                                        progressBar.setVisibility(View.GONE);
-
-                                        if (task.isSuccessful()) {
-                                            finish();
-                                            intent = new Intent(getApplicationContext(), UserProfile.class);
-                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                            Toast.makeText(getApplicationContext(), "Congrats! You're in.", Toast.LENGTH_SHORT)
-                                                    .show();
-                                            startActivity(intent);
-                                        } else {
-                                            Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT)
-                                                    .show();
-                                        }
-                                    }
-                                });
+                        signupUser();
 
                     } else {
                         progressBar.setVisibility(View.GONE);
@@ -131,6 +111,8 @@ public class Signup extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // User clicks on back button
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,5 +120,29 @@ public class Signup extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void signupUser() {
+        firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(),
+                confirmPassword.getText().toString())
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        progressBar.setVisibility(View.GONE);
+
+                        if (task.isSuccessful()) {
+                            finish();
+                            intent = new Intent(getApplicationContext(), UserProfile.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            Toast.makeText(getApplicationContext(), "Congrats! You're in.", Toast.LENGTH_SHORT)
+                                    .show();
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    }
+                });
     }
 }
