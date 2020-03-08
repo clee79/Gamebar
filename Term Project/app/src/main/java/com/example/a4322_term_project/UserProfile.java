@@ -25,15 +25,18 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.auth.User;
 
 public class UserProfile extends AppCompatActivity {
     Intent intent;
     Button edit, signout, done;
     EditText name, email, phone, restaurantID, tableID;
     ImageView back;
-    boolean signedIn = true;
     FirebaseAuth mAuth;
+    FirebaseUser currentUser;
     FirebaseFirestore fStore;
+    DocumentReference documentReference;
+
     String userID;
 
     @Override
@@ -41,12 +44,15 @@ public class UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-
+        // Database declarations
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
-
         userID = mAuth.getCurrentUser().getUid();
+        currentUser = mAuth.getCurrentUser();
+        documentReference = fStore.collection("users").document(userID);
 
+
+        // UserProfile declarations
         edit = findViewById(R.id.editButton);
         done = findViewById(R.id.doneButton);
         back = findViewById(R.id.backButtonDrawable);
@@ -89,9 +95,9 @@ public class UserProfile extends AppCompatActivity {
                 edit.setVisibility(View.VISIBLE);
             }
         });
+
         // Signout button
         signout.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 dialogBuilderSignOut();
@@ -114,7 +120,7 @@ public class UserProfile extends AppCompatActivity {
         super.onStart();
 
         // If user is already logged in, go straight to UserProfile activity
-        if (mAuth.getCurrentUser() == null) {
+        if (currentUser== null) {
             intent = new Intent(this, Login.class);
             startActivity(intent);
             finish();
@@ -154,7 +160,6 @@ public class UserProfile extends AppCompatActivity {
     private void signoutUser() {
         // Sign user out
         FirebaseAuth.getInstance().signOut();
-        // signedIn = false;
 
         // Go to home page
         intent = new Intent(getApplicationContext(), Home.class);
@@ -162,10 +167,7 @@ public class UserProfile extends AppCompatActivity {
         finish();
     }
 
-    // ON SIGN OUT CAUSES APP TO CRASH TEMPORARILY
     private void loadUserInformation() {
-
-            final DocumentReference documentReference = fStore.collection("users").document(userID);
 
             documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
                 @Override
@@ -187,9 +189,7 @@ public class UserProfile extends AppCompatActivity {
     // Ex: You click Edit and you change the email and name fields
     // Only 1 field will update
     private void saveUserInformation() {
-        EditText name = findViewById(R.id.nameEditText);
-        EditText email = findViewById(R.id.emailEditText);
-        EditText phone = findViewById(R.id.phoneEditText);
+
 
         String nameStr =  name.getText().toString();
         String emailStr =  email.getText().toString();
@@ -207,34 +207,24 @@ public class UserProfile extends AppCompatActivity {
             return;
         }
 
-        FirebaseUser user = mAuth.getCurrentUser();
 
-        if (user != null) {
-            // Update display name
-            UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(nameStr)
-                    .build();
-
-            user.updateEmail(emailStr)
+        if (currentUser != null) {
+            // Update email
+            currentUser.updateEmail(emailStr)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(UserProfile.this, "Email updated", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserProfile.this, "Profile updated", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(UserProfile.this, "Oops! Something went wrong.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
 
-            user.updateProfile(profile)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(UserProfile.this, "Display Updated", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-
+            // Update collection db
+            documentReference.update("name", nameStr);
+            documentReference.update("email", emailStr);
         }
     }
 }
