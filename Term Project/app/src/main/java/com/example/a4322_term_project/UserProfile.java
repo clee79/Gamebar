@@ -31,6 +31,7 @@ public class UserProfile extends AppCompatActivity {
     Button edit, signout, done;
     EditText name, email, phone, restaurantID, tableID;
     ImageView back;
+    boolean signedIn = true;
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
     String userID;
@@ -90,9 +91,10 @@ public class UserProfile extends AppCompatActivity {
         });
         // Signout button
         signout.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                signoutUser();
+                dialogBuilderSignOut();
             }
         });
 
@@ -119,24 +121,21 @@ public class UserProfile extends AppCompatActivity {
         }
     }
 
-    private void signoutUser() {
+
+    private void dialogBuilderSignOut() {
         // Create alert dialog to prompt user if they are sure they want to
         // sign out
         AlertDialog.Builder signoutWarning = new AlertDialog.Builder(UserProfile.this);
         signoutWarning.setMessage("Are you sure you want to sign out?");
         signoutWarning.setCancelable(true);
+        Log.i("USER ID", "loadUserInformation: " + userID);
 
         signoutWarning.setPositiveButton(
                 "Sign out",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // Sign user out
-                        FirebaseAuth.getInstance().signOut();
-
-                        // Go to home page
-                        intent = new Intent(getApplicationContext(), Home.class);
-                        startActivity(intent);
-                        finish();
+                        // SignoutUser function passed here
+                        signoutUser();
                     }
                 });
 
@@ -152,26 +151,35 @@ public class UserProfile extends AppCompatActivity {
         alert.show();
     }
 
+    private void signoutUser() {
+        // Sign user out
+        FirebaseAuth.getInstance().signOut();
+        // signedIn = false;
+
+        // Go to home page
+        intent = new Intent(getApplicationContext(), Home.class);
+        startActivity(intent);
+        finish();
+    }
+
     // ON SIGN OUT CAUSES APP TO CRASH TEMPORARILY
     private void loadUserInformation() {
 
-        if (!userID.isEmpty()) {
-
-            DocumentReference documentReference = fStore.collection("users").document(userID);
+            final DocumentReference documentReference = fStore.collection("users").document(userID);
 
             documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
                 @Override
                 public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                    name.setText(documentSnapshot.getString("name"));
-                    email.setText(documentSnapshot.getString("email"));
+                    if (documentSnapshot != null && documentSnapshot.getString("name") != null &&
+                            documentSnapshot.getString("email") != null) {
+                        name.setText(documentSnapshot.getString("name"));
+                        email.setText(documentSnapshot.getString("email"));
+                    } else {
+                        return;
+                    }
                 }
             });
 
-        } else {
-            intent = new Intent(getApplicationContext(), Home.class);
-            startActivity(intent);
-            finish();
-        }
 
     }
 

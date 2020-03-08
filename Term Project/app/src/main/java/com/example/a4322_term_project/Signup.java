@@ -153,13 +153,13 @@ public class Signup extends AppCompatActivity {
 
                             databaseStorage();
 
-                            finish();
                             intent = new Intent(getApplicationContext(), UserProfile.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             Toast.makeText(getApplicationContext(), "Congrats! You're in.", Toast.LENGTH_SHORT)
                                     .show();
-
                             startActivity(intent);
+                            finish();
+
                         } else {
                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT)
                                     .show();

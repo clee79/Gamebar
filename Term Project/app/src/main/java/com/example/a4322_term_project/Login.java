@@ -132,8 +132,7 @@ public class Login extends AppCompatActivity {
         } else {
 
             // Login logic
-            mFirebaseAuth.signInWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(Login.this,
-                    new OnCompleteListener<AuthResult>() {
+            mFirebaseAuth.signInWithEmailAndPassword(emailStr, passwordStr).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -141,12 +140,13 @@ public class Login extends AppCompatActivity {
 
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Login.this, "Login failed! Try again.", Toast.LENGTH_SHORT).show();
+                                email.requestFocus();
                             } else {
                                 Log.d("FIREBASE USER LOGIN", FirebaseAuth.getInstance().getCurrentUser().toString());
-                                finish();
                                 intent = new Intent(getApplicationContext(), UserProfile.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
+                                finish();
 
                             }
                         }

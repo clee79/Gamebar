@@ -65,9 +65,9 @@ public class Home extends AppCompatActivity {
 
         // If user is already logged in, go straight to UserProfile activity
         if (mFirebaseAuth.getCurrentUser() != null) {
-            finish();
-            intent = new Intent(this, UserProfile.class);
+            intent = new Intent(this, Hub.class);
             startActivity(intent);
+            finish();
         }
     }
 }
