@@ -1,6 +1,7 @@
 package com.example.a4322_term_project;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,32 +20,44 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class UserProfile extends AppCompatActivity {
     Intent intent;
     Button edit, signout, done;
-    EditText name, email, phone, other;
+    EditText name, email, phone, restaurantID, tableID;
     ImageView back;
     FirebaseAuth mAuth;
+    FirebaseFirestore fStore;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
+
         mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
+        userID = mAuth.getCurrentUser().getUid();
 
         edit = findViewById(R.id.editButton);
         done = findViewById(R.id.doneButton);
         back = findViewById(R.id.backButtonDrawable);
         signout = findViewById(R.id.signoutButton);
+
         name = findViewById(R.id.nameEditText);
         email = findViewById(R.id.emailEditText);
         phone = findViewById(R.id.phoneEditText);
-        other = findViewById(R.id.otherEditText);
+        //restaurantID = findViewById(R.id.restaurantID);
+        //tableID = findViewById(R.id.tableID);
 
         loadUserInformation();
-
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +69,6 @@ public class UserProfile extends AppCompatActivity {
                 name.setEnabled(true);
                 email.setEnabled(true);
                 phone.setEnabled(true);
-                other.setEnabled(true);
 
                 // Focus on email when edit button is clicked
                 email.requestFocus();
@@ -71,7 +83,6 @@ public class UserProfile extends AppCompatActivity {
                 name.setEnabled(false);
                 email.setEnabled(false);
                 phone.setEnabled(false);
-                other.setEnabled(false);
 
                 done.setVisibility(View.GONE);
                 edit.setVisibility(View.VISIBLE);
@@ -89,9 +100,9 @@ public class UserProfile extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
                 intent = new Intent(getApplicationContext(), Hub.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -102,9 +113,9 @@ public class UserProfile extends AppCompatActivity {
 
         // If user is already logged in, go straight to UserProfile activity
         if (mAuth.getCurrentUser() == null) {
-            finish();
             intent = new Intent(this, Login.class);
             startActivity(intent);
+            finish();
         }
     }
 
@@ -123,9 +134,9 @@ public class UserProfile extends AppCompatActivity {
                         FirebaseAuth.getInstance().signOut();
 
                         // Go to home page
-                        finish();
                         intent = new Intent(getApplicationContext(), Home.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
 
@@ -140,18 +151,27 @@ public class UserProfile extends AppCompatActivity {
         AlertDialog alert = signoutWarning.create();
         alert.show();
     }
+
+    // ON SIGN OUT CAUSES APP TO CRASH TEMPORARILY
     private void loadUserInformation() {
-        FirebaseUser user = mAuth.getCurrentUser();
 
-        if (user != null) {
-            if (user.getDisplayName() != null) {
-                name.setText(user.getDisplayName());
-            }
-            if (user.getEmail() != null) {
-                email.setText(user.getEmail());
-            }
+        if (!userID.isEmpty()) {
+
+            DocumentReference documentReference = fStore.collection("users").document(userID);
+
+            documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                    name.setText(documentSnapshot.getString("name"));
+                    email.setText(documentSnapshot.getString("email"));
+                }
+            });
+
+        } else {
+            intent = new Intent(getApplicationContext(), Home.class);
+            startActivity(intent);
+            finish();
         }
-
 
     }
 
@@ -208,7 +228,5 @@ public class UserProfile extends AppCompatActivity {
                     });
 
         }
-
-
     }
 }

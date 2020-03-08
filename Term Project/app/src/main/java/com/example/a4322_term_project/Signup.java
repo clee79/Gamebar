@@ -17,16 +17,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Signup extends AppCompatActivity {
     Intent intent;
     Button button;
     ImageView back;
     TextView signup, gotoLogin;
-    EditText email, password, confirmPassword;
+    EditText name, email, password, confirmPassword;
     Animation fromleft, fromright, fromtop;
 
     // When user clicks on signup, display progress bar
@@ -34,6 +41,8 @@ public class Signup extends AppCompatActivity {
 
     // Firebase
     FirebaseAuth firebaseAuth;
+    FirebaseFirestore fStore;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +57,7 @@ public class Signup extends AppCompatActivity {
         signup = findViewById(R.id.signupTextView);
         back = findViewById(R.id.backButtonDrawable);
         button = findViewById(R.id.registerButton);
+        name = findViewById(R.id.nameEditText);
         email = findViewById(R.id.usernameTextEdit);
         password = findViewById(R.id.passwordTextEdit);
         confirmPassword = findViewById(R.id.confirmPasswordTextEdit);
@@ -56,6 +66,7 @@ public class Signup extends AppCompatActivity {
         // Animation
         back.setAnimation(fromtop);
         signup.setAnimation(fromleft);
+        name.setAnimation(fromright);
         email.setAnimation(fromleft);
         password.setAnimation(fromright);
         confirmPassword.setAnimation(fromleft);
@@ -64,16 +75,23 @@ public class Signup extends AppCompatActivity {
 
         // Establish connection to firebase
         firebaseAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
 
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
+                String nameStr = name.getText().toString();
                 String emailStr = email.getText().toString();
                 String passwordStr = password.getText().toString();
                 String passwordConfirmStr = confirmPassword.getText().toString();
 
+                if (nameStr.isEmpty()) {
+                    Toast.makeText(Signup.this, "Name is empty.", Toast.LENGTH_SHORT).show();
+                    name.requestFocus();
+                }
                 if (emailStr.isEmpty()) {
                     Toast.makeText(Signup.this, "Email is empty.", Toast.LENGTH_SHORT).show();
                     email.requestFocus();
@@ -132,11 +150,15 @@ public class Signup extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
 
                         if (task.isSuccessful()) {
+
+                            databaseStorage();
+
                             finish();
                             intent = new Intent(getApplicationContext(), UserProfile.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             Toast.makeText(getApplicationContext(), "Congrats! You're in.", Toast.LENGTH_SHORT)
                                     .show();
+
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT)
@@ -144,5 +166,27 @@ public class Signup extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    private void databaseStorage() {
+        // get current user id
+        userID = firebaseAuth.getCurrentUser().getUid();
+        String dbName = name.getText().toString();
+        String dbEmail = email.getText().toString();
+
+
+
+        // Storing in database
+        DocumentReference documentReference = fStore.collection("users").document(userID);
+        // insert data to map
+        Map <String, Object> user = new HashMap<>();
+        user.put("name", dbName);
+        user.put("email", dbEmail);
+
+        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("DB", "onSuccess: user profile is created -> " + userID);
+            }
+        });
     }
 }
