@@ -51,7 +51,6 @@ public class UserProfile extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
         documentReference = fStore.collection("users").document(userID);
 
-
         // UserProfile declarations
         edit = findViewById(R.id.editButton);
         done = findViewById(R.id.doneButton);

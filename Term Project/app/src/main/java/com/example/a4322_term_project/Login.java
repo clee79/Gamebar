@@ -78,7 +78,8 @@ public class Login extends AppCompatActivity {
                 if (firebaseUser != null) {
                     intent = new Intent(getApplicationContext(), UserProfile.class);
                 } else {
-                    Toast.makeText(Login.this, "Login failed. Please try again.", Toast.LENGTH_SHORT).show();
+                    return;
+                    // Toast.makeText(Login.this, "Login failed. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             }
         };

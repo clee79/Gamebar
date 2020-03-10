@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46ec2677-d69d-4d89-8d7b-7ed57ee677c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
-              <caret line="158" column="44" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
+            <state relative-caret-position="-12">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#2762#4422#0" expanded="true" />
                 <element signature="e#4421#4422#0" expanded="true" />
@@ -54,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="226" column="47" selection-start-line="226" selection-end-line="227" />
+            <state relative-caret-position="-2115">
+              <caret line="51" column="72" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
               <folding>
                 <element signature="e#3421#3675#0" expanded="true" />
                 <element signature="e#3674#3675#0" expanded="true" />
@@ -75,13 +77,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-532">
-              <caret line="204" column="12" selection-start-line="204" selection-start-column="12" selection-end-line="204" selection-end-column="12" />
+            <state relative-caret-position="200">
+              <caret line="268" column="43" lean-forward="true" selection-start-line="268" selection-start-column="43" selection-end-line="268" selection-end-column="43" />
               <folding>
-                <element signature="e#11208#11224#0" expanded="true" />
+                <element signature="e#11677#11693#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
+            <state relative-caret-position="227">
+              <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
               <folding>
                 <element signature="e#3085#3286#0" expanded="true" />
                 <element signature="e#3285#3286#0" expanded="true" />
@@ -145,10 +147,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mauthstate</find>
       <find>signed</find>
       <find>documentReference</find>
       <find>mAuth.getCurrentUser()</find>
+      <find>mauthstate</find>
+      <find>Login Failed</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,16 +170,17 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Home.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="99" />
+    <option name="y" value="53" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -354,8 +358,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="99" y="53" width="1440" height="877" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18669528" />
@@ -369,7 +372,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.3295562" />
       <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" weight="0.32866243" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32866243" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32866243" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32866243" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5007153" side_tool="true" weight="0.32866243" />
       <window_info anchor="bottom" id="Build" order="5" weight="0.2920605" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
@@ -380,7 +383,7 @@
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.44778255" />
+      <window_info anchor="right" id="Preview" order="4" visible="true" weight="0.27682403" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Assistant" order="6" weight="0.3295838" />
     </layout>
@@ -443,19 +446,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/QRWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding>
-            <element signature="e#176#177#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -507,21 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
-          <folding>
-            <element signature="e#3085#3286#0" expanded="true" />
-            <element signature="e#3285#3286#0" expanded="true" />
-            <element signature="e#3414#3671#0" expanded="true" />
-            <element signature="e#3670#3671#0" expanded="true" />
-            <element signature="e#4809#5707#0" expanded="true" />
-            <element signature="e#5706#5707#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1600">
@@ -538,10 +513,21 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/QRWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="158" column="44" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
+        <state relative-caret-position="-12">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="e#2762#4422#0" expanded="true" />
             <element signature="e#4421#4422#0" expanded="true" />
@@ -554,21 +540,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="204" column="12" selection-start-line="204" selection-start-column="12" selection-end-line="204" selection-end-column="12" />
+        <state relative-caret-position="227">
+          <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
           <folding>
-            <element signature="e#11208#11224#0" expanded="true" />
+            <element signature="e#3085#3286#0" expanded="true" />
+            <element signature="e#3285#3286#0" expanded="true" />
+            <element signature="e#3414#3671#0" expanded="true" />
+            <element signature="e#3670#3671#0" expanded="true" />
+            <element signature="e#4809#5707#0" expanded="true" />
+            <element signature="e#5706#5707#0" expanded="true" />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="226" column="47" selection-start-line="226" selection-end-line="227" />
+        <state relative-caret-position="-2115">
+          <caret line="51" column="72" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
           <folding>
             <element signature="e#3421#3675#0" expanded="true" />
             <element signature="e#3674#3675#0" expanded="true" />
@@ -583,6 +573,17 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="268" column="43" lean-forward="true" selection-start-line="268" selection-start-column="43" selection-end-line="268" selection-end-column="43" />
+          <folding>
+            <element signature="e#11677#11693#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>
