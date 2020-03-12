@@ -40,10 +40,18 @@ public class UserProfile extends AppCompatActivity {
 
     String userID;
 
+    // Reference variable
+    private static UserProfile instance = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+
+        // Reference variable
+        instance = this;
+
 
         // Database declarations
         mAuth = FirebaseAuth.getInstance();
@@ -130,7 +138,15 @@ public class UserProfile extends AppCompatActivity {
     }
 
 
-    private void dialogBuilderSignOut() {
+    // Reference getter
+    public static UserProfile getUserProfileInstance() {
+        if (instance != null) {
+            return instance;
+        }
+        return null;
+    }
+
+    public void dialogBuilderSignOut() {
         // Create alert dialog to prompt user if they are sure they want to
         // sign out
         AlertDialog.Builder signoutWarning = new AlertDialog.Builder(UserProfile.this);
@@ -159,7 +175,7 @@ public class UserProfile extends AppCompatActivity {
         alert.show();
     }
 
-    private void signoutUser() {
+    public void signoutUser() {
         // Sign user out
         FirebaseAuth.getInstance().signOut();
 

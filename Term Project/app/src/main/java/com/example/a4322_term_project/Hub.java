@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Hub extends AppCompatActivity {
-    Button profile, qrCode;
+    Button profile, qrCode, logout;
     Intent intent;
 
     @Override
@@ -18,6 +18,16 @@ public class Hub extends AppCompatActivity {
 
         profile = findViewById(R.id.profileButton);
         qrCode = findViewById(R.id.qrButton);
+        logout = findViewById(R.id.logout);
+
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Build alert dialog in the future
+                UserProfile.getUserProfileInstance().signoutUser();
+            }
+        });
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
