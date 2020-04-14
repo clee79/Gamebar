@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Hub extends AppCompatActivity {
-    Button profile, qrCode, logout;
+    Button profile, trivia, qrCode, logout;
     Intent intent;
 
     @Override
@@ -17,22 +17,24 @@ public class Hub extends AppCompatActivity {
         setContentView(R.layout.activity_hub);
 
         profile = findViewById(R.id.profileButton);
+        trivia = findViewById(R.id.triviaButton);
         qrCode = findViewById(R.id.qrButton);
         logout = findViewById(R.id.logout);
 
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Build alert dialog in the future
-                UserProfile.getUserProfileInstance().signoutUser();
-            }
-        });
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getApplicationContext(), UserProfile.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        trivia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getApplicationContext(), Topic.class);
                 startActivity(intent);
                 finish();
             }
@@ -45,6 +47,14 @@ public class Hub extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 // Go to QR code screen
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Build alert dialog in the future
+                UserProfile.getUserProfileInstance().signoutUser();
             }
         });
     }

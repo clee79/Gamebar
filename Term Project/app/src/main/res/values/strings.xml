@@ -29,6 +29,7 @@
     <string name="sampleName">Don Joe</string>
     <string name="profile">Profile</string>
     <string name="qrScan">Scan a table</string>
+    <string name="playTrivia">Play Trivia</string>
 
     <string name="scanBar">Scan Table Barcode</string>
 
