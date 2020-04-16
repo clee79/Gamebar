@@ -3,12 +3,10 @@ package com.example.a4322_term_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
@@ -31,8 +29,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Quiz extends AppCompatActivity {
-
-    RequestQueue requestQueue;
 
     int score = 0;
     int qid = 0;
@@ -132,8 +128,6 @@ public class Quiz extends AppCompatActivity {
     // when user presses on one of the answers
     void handleButtonClick(int selectedAnswer) {
 
-
-
         optionA.setEnabled(false);
         optionB.setEnabled(false);
         optionC.setEnabled(false);
@@ -198,15 +192,15 @@ public class Quiz extends AppCompatActivity {
                 @Override
                 public void run() {
 
-                    Intent i = new Intent(Quiz.this, Summary.class);
+                    Intent i = new Intent(getApplicationContext(), Summary.class);
 
                     qcount = 0;
 
                     i.putExtra("Score", score);
-                    i.putExtra("Category", category);
-                    i.putExtra("token", key);
-                    startActivityForResult(i,1);
-
+                    i.putExtra("Topic", category);
+                    i.putExtra("Key", key);
+                    startActivity(i);
+                    finish();
 
                 }
             }, 1000);
@@ -343,22 +337,13 @@ public class Quiz extends AppCompatActivity {
 
         score = 0;
         Log.i("TAG", "LoadQ: CATCHING VALUE");
-        /*
-        key = ((Key)getApplication()).getKey();
-
-        if (key != null) {
-            url = "token=" + key + "&amount=10" + "&category=" + category;
-        }
-        else {
-            url = "amount=10" + "&category=" + category;
-        }*/
 
         tempURL = "amount=10" + "&category=" + category;
 
         url = "https://opentdb.com/api.php?" + tempURL;
 
 
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
 
         // Request a string response from the provided URL.
@@ -400,7 +385,7 @@ public class Quiz extends AppCompatActivity {
             }
         });
 // Add the request to the RequestQueue.
-        queue.add(stringRequest);
+        requestQueue.add(stringRequest);
 
     }
 
