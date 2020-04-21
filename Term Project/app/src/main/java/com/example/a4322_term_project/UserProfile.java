@@ -69,8 +69,10 @@ public class UserProfile extends AppCompatActivity {
         name = findViewById(R.id.nameEditText);
         email = findViewById(R.id.emailEditText);
         phone = findViewById(R.id.phoneEditText);
-        //restaurantID = findViewById(R.id.restaurantID);
-        //tableID = findViewById(R.id.tableID);
+
+        // TODO -> QUESTION TO CHRIS: SAVE THIS IN DB? OR JUST CHANGE WHEN QR RECEIVES THIS INFO?
+        restaurantID = findViewById(R.id.restaurantID);
+        tableID = findViewById(R.id.tableID);
 
         loadUserInformation();
 
@@ -79,7 +81,7 @@ public class UserProfile extends AppCompatActivity {
             public void onClick(View v) {
                 edit.setVisibility(View.GONE);
                 done.setVisibility(View.VISIBLE);
-                // NOW THESE ARE ENABLED, NEED TO GET NEW VALUES AND PUSH TO DB
+
                 // DONE BUTTON TO SAVE CHANGES
                 name.setEnabled(true);
                 email.setEnabled(true);
@@ -104,7 +106,7 @@ public class UserProfile extends AppCompatActivity {
             }
         });
 
-        // Signout button
+        // Sign out button
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,6 +196,7 @@ public class UserProfile extends AppCompatActivity {
                             documentSnapshot.getString("email") != null) {
                         name.setText(documentSnapshot.getString("name"));
                         email.setText(documentSnapshot.getString("email"));
+                        phone.setText(documentSnapshot.getString("phone"));
                     } else {
                         return;
                     }
@@ -207,7 +210,6 @@ public class UserProfile extends AppCompatActivity {
     // Ex: You click Edit and you change the email and name fields
     // Only 1 field will update
     private void saveUserInformation() {
-
 
         String nameStr =  name.getText().toString();
         String emailStr =  email.getText().toString();
@@ -243,6 +245,7 @@ public class UserProfile extends AppCompatActivity {
             // Update collection db
             documentReference.update("name", nameStr);
             documentReference.update("email", emailStr);
+            documentReference.update("phone", phoneStr);
         }
     }
 }
