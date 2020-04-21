@@ -182,11 +182,8 @@ public class Quiz extends AppCompatActivity {
                 optionD.setBackgroundResource(R.drawable.button_wrong);
         }
 
-        // TODO -> Make it look nicer
+        // TODO -> Make it look nicer?
         // TODO -> Multiple instances
-        // TODO -> Keep score on screen, player number and round
-        // TODO -> Number of players variable
-        // TODO -> DB: Edit phone number, fields for: REST ID/TABLE ID
 
         // if at the end, after the last question pass it off to
         // summary screen to show the stats

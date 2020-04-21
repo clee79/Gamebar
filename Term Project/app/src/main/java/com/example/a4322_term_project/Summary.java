@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -37,6 +39,7 @@ public class Summary extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
     DocumentReference documentReference;
+    DatabaseReference databaseReference;
     String userID;
 
 
@@ -60,17 +63,18 @@ public class Summary extends AppCompatActivity {
         topicName.setText(getTopicName(topic));
         questions.setText("Question : " + 10);
         correct.setText("Score : "+score);
-/*
+
         // Database instances
         firebaseAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+        userID = firebaseAuth.getCurrentUser().getUid();
 
-        // Current User
-        String currentUser = firebaseAuth.getCurrentUser().getUid();
+        documentReference = fStore.collection("quiz").document(userID);
+
 
         // Save data
         storeGameScore(topic, score);
-*/
+
 
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,7 +138,7 @@ public class Summary extends AppCompatActivity {
         String dbTopic = getTopicName(topic);
         String dbCorrect = Integer.toString(right);
         String dbQuizDate = getDate();
-        int dbTotalGames = getCurrentGames() + 1;
+        //int dbTotalGames = getCurrentGames() + 1;
         // Storing in database
         DocumentReference documentReference = fStore.collection("quiz").document(userID);
 
@@ -143,7 +147,13 @@ public class Summary extends AppCompatActivity {
         quiz.put("topic", dbTopic);
         quiz.put("correct", dbCorrect);
         quiz.put("date", dbQuizDate);
-        quiz.put("totalGames", dbTotalGames);
+        quiz.put("totalGames", 10);
+
+        documentReference.update("topic", dbTopic);
+        documentReference.update("correct", dbCorrect);
+        documentReference.update("date", dbQuizDate);
+        documentReference.update("totalGames", 10);
+
 
 
         documentReference.set(quiz).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -161,13 +171,14 @@ public class Summary extends AppCompatActivity {
 
         return strDate;
     }
-
+    /*
     public int getCurrentGames () {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                if (documentSnapshot != null) {
-                    currentGamesPlayed = documentSnapshot.getLong("totalGames").intValue();
+                if (documentSnapshot != null && documentSnapshot.getString("name") != null &&
+                        documentSnapshot.getString("email") != null) {
+
                 } else {
                     return;
                 }
@@ -176,6 +187,6 @@ public class Summary extends AppCompatActivity {
 
         return currentGamesPlayed;
 
-    }
+    }*/
 
 }
