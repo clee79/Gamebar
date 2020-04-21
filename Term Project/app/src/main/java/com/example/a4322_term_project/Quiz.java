@@ -440,8 +440,8 @@ public class Quiz extends AppCompatActivity {
         optionC.setEnabled(true);
         optionD.setEnabled(true);
         // Set question number view
-        questionNumber.setText("Question " + qcount);
-        player.setText(playerNumber);
+        questionNumber.setText("Question " + (qcount + 1) + "/10");
+        player.setText("Player #" + playerNumber);
         qcount++;
         qid++;
     }

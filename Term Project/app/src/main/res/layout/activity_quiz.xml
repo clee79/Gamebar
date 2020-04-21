@@ -19,13 +19,31 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/questionNumberTextView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="220dp"
+                android:text="Question 7/10"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/playerTextView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:text="Question"
+            android:layout_marginTop="75dp"
             android:textColor="#FFFFFF"
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,27 +63,6 @@
         android:text="A"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/buttonB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/questionNumberTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="300dp"
-        android:layout_marginBottom="450dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-    <TextView
-        android:id="@+id/playerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="250dp"
-        android:layout_marginBottom="450dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
