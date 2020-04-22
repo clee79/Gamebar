@@ -7,14 +7,10 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="TAG" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46ec2677-d69d-4d89-8d7b-7ed57ee677c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1791">
-              <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="189" selection-end-column="11" />
+            <state relative-caret-position="165">
+              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,18 +52,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="154" column="49" selection-start-line="154" selection-start-column="49" selection-end-line="154" selection-end-column="49" />
+            <state relative-caret-position="387">
+              <caret line="148" column="8" lean-forward="true" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="8" />
               <folding>
-                <element signature="e#2454#2713#0" expanded="true" />
-                <element signature="e#2712#2713#0" expanded="true" />
-                <element signature="e#2752#3009#0" expanded="true" />
-                <element signature="e#3008#3009#0" expanded="true" />
+                <element signature="e#2565#2824#0" expanded="true" />
+                <element signature="e#2823#2824#0" expanded="true" />
+                <element signature="e#2863#3120#0" expanded="true" />
+                <element signature="e#3119#3120#0" expanded="true" />
                 <element signature="method#onNewIntent#0;class#Summary#0" />
                 <element signature="method#getTopicName#0;class#Summary#0" />
-                <element signature="e#4666#4874#0" expanded="true" />
-                <element signature="e#4873#4874#0" expanded="true" />
                 <element signature="method#getDate#0;class#Summary#0" />
+                <element signature="method#getKey#0;class#Summary#0" />
               </folding>
             </state>
           </provider>
@@ -86,13 +81,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-171">
-              <caret line="189" column="39" selection-start-line="189" selection-start-column="39" selection-end-line="189" selection-end-column="39" />
+            <state relative-caret-position="276">
+              <caret line="198" column="67" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="198" selection-end-column="67" />
               <folding>
                 <element signature="method#onStart#0;class#UserProfile#0" />
                 <element signature="method#dialogBuilderSignOut#0;class#UserProfile#0" />
                 <element signature="method#signoutUser#0;class#UserProfile#0" />
-                <element signature="method#loadUserInformation#0;class#UserProfile#0" />
+                <element signature="e#6178#6804#0" expanded="true" />
+                <element signature="e#6803#6804#0" expanded="true" />
                 <element signature="e#8041#8588#0" expanded="true" />
                 <element signature="e#8587#8588#0" expanded="true" />
               </folding>
@@ -373,7 +369,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.24964234" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18669528" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18669528" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -382,11 +378,11 @@
       <window_info id="Resources Explorer" order="7" weight="0.32971016" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32866243" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" weight="0.32866243" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" visible="true" weight="0.32866243" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32866243" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.27261147" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5007153" side_tool="true" weight="0.32866243" />
-      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.29044586" />
+      <window_info anchor="bottom" id="Build" order="5" weight="0.29044586" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.39490446" />
       <window_info anchor="bottom" id="Debug" order="8" />
@@ -656,16 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1791">
-          <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="189" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1065">
@@ -706,13 +692,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="189" column="39" selection-start-line="189" selection-start-column="39" selection-end-line="189" selection-end-column="39" />
+        <state relative-caret-position="276">
+          <caret line="198" column="67" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="198" selection-end-column="67" />
           <folding>
             <element signature="method#onStart#0;class#UserProfile#0" />
             <element signature="method#dialogBuilderSignOut#0;class#UserProfile#0" />
             <element signature="method#signoutUser#0;class#UserProfile#0" />
-            <element signature="method#loadUserInformation#0;class#UserProfile#0" />
+            <element signature="e#6178#6804#0" expanded="true" />
+            <element signature="e#6803#6804#0" expanded="true" />
             <element signature="e#8041#8588#0" expanded="true" />
             <element signature="e#8587#8588#0" expanded="true" />
           </folding>
@@ -727,20 +714,29 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="154" column="49" selection-start-line="154" selection-start-column="49" selection-end-line="154" selection-end-column="49" />
+        <state relative-caret-position="387">
+          <caret line="148" column="8" lean-forward="true" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="8" />
           <folding>
-            <element signature="e#2454#2713#0" expanded="true" />
-            <element signature="e#2712#2713#0" expanded="true" />
-            <element signature="e#2752#3009#0" expanded="true" />
-            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#2565#2824#0" expanded="true" />
+            <element signature="e#2823#2824#0" expanded="true" />
+            <element signature="e#2863#3120#0" expanded="true" />
+            <element signature="e#3119#3120#0" expanded="true" />
             <element signature="method#onNewIntent#0;class#Summary#0" />
             <element signature="method#getTopicName#0;class#Summary#0" />
-            <element signature="e#4666#4874#0" expanded="true" />
-            <element signature="e#4873#4874#0" expanded="true" />
             <element signature="method#getDate#0;class#Summary#0" />
+            <element signature="method#getKey#0;class#Summary#0" />
           </folding>
         </state>
       </provider>

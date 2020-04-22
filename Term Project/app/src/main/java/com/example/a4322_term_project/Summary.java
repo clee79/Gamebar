@@ -39,7 +39,8 @@ public class Summary extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
     DocumentReference documentReference;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, currentRef;
+    FirebaseDatabase firebaseDatabase;
     String userID;
 
 
@@ -66,6 +67,8 @@ public class Summary extends AppCompatActivity {
 
         // Database instances
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
         fStore = FirebaseFirestore.getInstance();
         userID = firebaseAuth.getCurrentUser().getUid();
 
@@ -134,32 +137,30 @@ public class Summary extends AppCompatActivity {
     public void storeGameScore (int topic, int right) {
         // get current user id
         userID = firebaseAuth.getCurrentUser().getUid();
-
+        // Get random key for document
+        String key = getKey();
         String dbTopic = getTopicName(topic);
         String dbCorrect = Integer.toString(right);
         String dbQuizDate = getDate();
-        //int dbTotalGames = getCurrentGames() + 1;
+        int dbTotalGames = 1;
+
         // Storing in database
-        DocumentReference documentReference = fStore.collection("quiz").document(userID);
+        DocumentReference documentReference = fStore.collection("quiz").document(key);
+
+        Log.d("TAG", "GENERATED KEY " + key);
 
         // insert data to map
-        Map<String, Object> quiz = new HashMap<>();
+        Map <String, Object> quiz = new HashMap<>();
+        quiz.put("userID", userID);
         quiz.put("topic", dbTopic);
         quiz.put("correct", dbCorrect);
-        quiz.put("date", dbQuizDate);
-        quiz.put("totalGames", 10);
-
-        documentReference.update("topic", dbTopic);
-        documentReference.update("correct", dbCorrect);
-        documentReference.update("date", dbQuizDate);
-        documentReference.update("totalGames", 10);
-
+        quiz.put("data", dbQuizDate);
 
 
         documentReference.set(quiz).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Log.d("DB", "onSuccess: quiz collection is created -> " + userID);
+                Log.d("DB", "onSuccess: user profile is created -> " + userID);
             }
         });
     }
@@ -176,9 +177,8 @@ public class Summary extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                if (documentSnapshot != null && documentSnapshot.getString("name") != null &&
-                        documentSnapshot.getString("email") != null) {
-
+                if (documentSnapshot != null && documentSnapshot.getLong("totalGames").intValue() > 0) {
+                    Log.i("TAG", "onEvent: GOT TO CURRENT GAMES");
                 } else {
                     return;
                 }
@@ -189,4 +189,24 @@ public class Summary extends AppCompatActivity {
 
     }*/
 
+    public String getKey () {
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
+
+        // create StringBuffer size of AlphaNumericString
+        StringBuilder sb = new StringBuilder(16);
+
+        for (int i = 0; i < 16; i++) {
+
+            // generate a random number between
+            // 0 to AlphaNumericString variable length
+            int index = (int)(AlphaNumericString.length() * Math.random());
+
+            // add Character one by one in end of sb
+            sb.append(AlphaNumericString.charAt(index));
+        }
+
+        return sb.toString();
+    }
 }
