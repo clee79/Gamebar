@@ -1,6 +1,5 @@
 package com.example.a4322_term_project;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,13 +11,9 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,7 +24,6 @@ import java.util.Map;
 public class Summary extends AppCompatActivity {
 
     String key;
-    int currentGamesPlayed = 0;
     int topic, score;
     TextView topicName, questions, correct;
     Intent intent;
@@ -39,7 +33,6 @@ public class Summary extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
     DocumentReference documentReference;
-    DatabaseReference databaseReference, currentRef;
     FirebaseDatabase firebaseDatabase;
     String userID;
 
@@ -65,19 +58,9 @@ public class Summary extends AppCompatActivity {
         questions.setText("Question : " + 10);
         correct.setText("Score : "+score);
 
-        // Database instances
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        fStore = FirebaseFirestore.getInstance();
-        userID = firebaseAuth.getCurrentUser().getUid();
-
-        documentReference = fStore.collection("quiz").document(userID);
-
-
-        // Save data
+        // Save data to database
         storeGameScore(topic, score);
-
 
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,4 +192,9 @@ public class Summary extends AppCompatActivity {
 
         return sb.toString();
     }
+
+
+
+
+
 }

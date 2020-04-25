@@ -100,14 +100,15 @@
                         android:textSize="20sp"
                         android:paddingLeft="4dp"
                         />
+
                     <TextView
+                        android:id="@+id/gamesPlayedTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="125"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/startBlue"/>
+                        android:textColor="@color/startBlue"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -123,14 +124,15 @@
                         android:text="Best Category"
                         android:textSize="20sp"
                         />
+
                     <TextView
+                        android:id="@+id/categoryTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Technology"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/startBlue"/>
+                        android:textColor="@color/startBlue"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <LinearLayout
@@ -145,14 +147,16 @@
                         android:text="% Correct"
                         android:textSize="20sp"
                         />
+
                     <TextView
+                        android:id="@+id/percentageTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="57%"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/startBlue"/>
+                        android:text="57%"
+                        android:textColor="@color/startBlue"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
