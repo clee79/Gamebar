@@ -28,6 +28,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class StatisticsActivity extends AppCompatActivity {
@@ -38,7 +39,7 @@ public class StatisticsActivity extends AppCompatActivity {
     String userID;
 
     ListView listView;
-    ArrayList<String> array = new ArrayList<>();
+    ArrayList<String> stringArrayList = new ArrayList<>();
     TextView statsTV;
     ImageView back;
     int totalGames;
@@ -82,6 +83,8 @@ public class StatisticsActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
+                        ArrayList<String> array = new ArrayList<>();
+
                         Stat game = document.toObject(Stat.class);
 
                         Log.i(TAG, "TEST OBJECT: userID -> " + game.getUserID());
@@ -89,11 +92,12 @@ public class StatisticsActivity extends AppCompatActivity {
                         Log.i(TAG, "TEST OBJECT: score -> " + game.getScore());
                         Log.i(TAG, "TEST OBJECT: date -> " + game.getDate());
 
-                        array.add(game.getDate());
-                        array.add(game.getTopic());
-                        array.add(game.getScore());
+                        // concat strings for better looking stats output
+                        String stringConcat = buildString(game.getDate(), game.getTopic(), "Score: " + game.getScore());
 
-                        ArrayAdapter adapter = new ArrayAdapter<>(StatisticsActivity.this, android.R.layout.simple_list_item_1, array);
+                        stringArrayList.add(stringConcat);
+
+                        ArrayAdapter adapter = new ArrayAdapter<>(StatisticsActivity.this, android.R.layout.simple_list_item_1, stringArrayList);
                         listView.setAdapter(adapter);
                         Log.i(TAG, "getStats: array: " + array);
 
@@ -110,5 +114,10 @@ public class StatisticsActivity extends AppCompatActivity {
     }
     private void setWelcome () {
         statsTV.setText("Stats");
+    }
+
+    // Used to format stats output
+    private String buildString(String one, String two, String three) {
+        return "\n" + one + "\n" + two + "\n" + three + "\n";
     }
 }
