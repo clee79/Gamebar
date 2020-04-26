@@ -23,6 +23,7 @@
         <activity android:name=".Hub" />
         <activity android:name=".UserProfile" />
         <activity android:name=".Signup" />
+        <activity android:name=".Multiplayer"/>
         <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
