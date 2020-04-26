@@ -33,6 +33,8 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -279,8 +281,7 @@ public class UserProfile extends AppCompatActivity {
         CollectionReference quizCollectionReference = db.collection("quiz");
 
         Query query = quizCollectionReference
-                .whereEqualTo("userID",
-                        FirebaseAuth.getInstance().getCurrentUser().getUid());
+                .whereEqualTo("userID", userID);
 
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -291,18 +292,23 @@ public class UserProfile extends AppCompatActivity {
 
                     // for fav category
                     ArrayList<String> categoryList = new ArrayList<>();
-
+                    String temp;
+                    int tempForNulValues;
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         // track for percentage correct
-                        totalCorrect += Integer.parseInt(document.getData().get("correct").toString());
-                        Log.d(TAG, "onComplete: TOTAL CORRECT ->" + totalCorrect);
+                        Object obj = document.getData().get("correct");
+
+                        if (obj == null) {
+                            tempForNulValues = 0;
+                            totalCorrect += tempForNulValues;
+                        } else {
+                            totalCorrect += Integer.parseInt(obj.toString());
+                        }
 
                         // track for fav category
                         categoryList.add(document.getData().get("topic").toString());
                         // track for percentage
                         totalGames++;
-
-
                     }
 
                     // Set how many games text
@@ -321,6 +327,7 @@ public class UserProfile extends AppCompatActivity {
                         percent = totalCorrect * 1.0;
                         percent = percent / (totalGames * 10.0);
                         percent *= 100.0;
+                        formatDecimal(percent);
                         percentage.setText(percent + "%");
                     } else {
                         percentage.setText("No data");
@@ -352,6 +359,11 @@ public class UserProfile extends AppCompatActivity {
         }
 
         return mostRepeated.getKey();
+    }
+
+    public void formatDecimal (double d) {
+        NumberFormat formatter = new DecimalFormat("#0.00");
+        formatter.format(d);
     }
 
 }

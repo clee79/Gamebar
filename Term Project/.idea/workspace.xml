@@ -12,8 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46ec2677-d69d-4d89-8d7b-7ed57ee677c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,18 +41,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="301" selection-start-line="301" selection-end-line="301" />
+            <state relative-caret-position="302">
+              <caret line="303" column="25" lean-forward="true" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="25" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#onStart#0;class#UserProfile#0" />
                 <element signature="method#getUserProfileInstance#0;class#UserProfile#0" />
                 <element signature="method#dialogBuilderSignOut#0;class#UserProfile#0" />
                 <element signature="method#signoutUser#0;class#UserProfile#0" />
+                <element signature="method#loadUserInformation#0;class#UserProfile#0" />
                 <element signature="method#saveUserInformation#0;class#UserProfile#0" />
                 <element signature="e#7661#8545#1" />
-                <element signature="e#10003#11955#0" expanded="true" />
-                <element signature="e#11954#11955#0" expanded="true" />
+                <element signature="e#9933#11831#0" expanded="true" />
+                <element signature="e#11830#11831#0" expanded="true" />
                 <element signature="method#getMostCommonCategory#0;class#UserProfile#0" />
               </folding>
             </state>
@@ -409,7 +407,7 @@
       <window_info id="Resources Explorer" order="7" weight="0.32971016" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32866243" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" weight="0.32866243" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" visible="true" weight="0.32866243" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32866243" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.27261147" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5007153" side_tool="true" weight="0.32866243" />
@@ -821,18 +819,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="301" selection-start-line="301" selection-end-line="301" />
+        <state relative-caret-position="302">
+          <caret line="303" column="25" lean-forward="true" selection-start-line="303" selection-start-column="25" selection-end-line="303" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#onStart#0;class#UserProfile#0" />
             <element signature="method#getUserProfileInstance#0;class#UserProfile#0" />
             <element signature="method#dialogBuilderSignOut#0;class#UserProfile#0" />
             <element signature="method#signoutUser#0;class#UserProfile#0" />
+            <element signature="method#loadUserInformation#0;class#UserProfile#0" />
             <element signature="method#saveUserInformation#0;class#UserProfile#0" />
             <element signature="e#7661#8545#1" />
-            <element signature="e#10003#11955#0" expanded="true" />
-            <element signature="e#11954#11955#0" expanded="true" />
+            <element signature="e#9933#11831#0" expanded="true" />
+            <element signature="e#11830#11831#0" expanded="true" />
             <element signature="method#getMostCommonCategory#0;class#UserProfile#0" />
           </folding>
         </state>
