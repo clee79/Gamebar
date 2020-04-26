@@ -33,7 +33,7 @@ public class GameplayManager {
         playerIndex = p;
     }
 
-    public int GetPlayerIndex(){
+    public int getIndex(){
         return index;
     }
 
@@ -43,5 +43,22 @@ public class GameplayManager {
 
     public int getNumOfPlayers(){
         return numOfPlayers;
+    }
+
+    public int getCurrentPlayerIndex(){
+        return playerIndex[index];
+    }
+
+    public void SetupGame(){
+        if(numOfPlayers <= 0 ){
+            numOfPlayers = 1;
+        }
+        if(playerIndex == null){
+            playerIndex = new int[numOfPlayers];
+        }
+        for(int i = 0; i < playerIndex.length;i++){
+            playerIndex[i] = i+1;
+        }
+        index = 0;
     }
 }

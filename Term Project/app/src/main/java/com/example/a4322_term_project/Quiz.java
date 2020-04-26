@@ -55,6 +55,8 @@ public class Quiz extends AppCompatActivity {
     private Sensor mAccelerometer;
     private ShakeDetector mShakeDetector;
 
+    GameplayManager gameplayManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +91,12 @@ public class Quiz extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         category = bundle.getInt("topic");
+        int playercounter = bundle.getInt("players");
         Log.i("TAG", "CATEGORY -> " + Integer.toString(category));
+
+        gameplayManager = new GameplayManager(playercounter,new int[playercounter], 0);
+        gameplayManager.SetupGame();
+        playerNumber = gameplayManager.getCurrentPlayerIndex();
 
 
         LoadQ();
@@ -248,6 +255,9 @@ public class Quiz extends AppCompatActivity {
                     i.putExtra("Score", score);
                     i.putExtra("Topic", category);
                     i.putExtra("Key", key);
+                    i.putExtra("Player", gameplayManager.getCurrentPlayerIndex());
+                    i.putExtra("PlayerS", gameplayManager.getPlayerIndex());
+                    i.putExtra("Index", gameplayManager.getIndex());
                     startActivity(i);
                     Log.d("tag", "run: -> intent passed" );
 

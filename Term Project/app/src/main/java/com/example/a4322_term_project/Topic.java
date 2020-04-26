@@ -34,7 +34,7 @@ public class Topic extends AppCompatActivity {
         myth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 20);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -46,7 +46,7 @@ public class Topic extends AppCompatActivity {
         geography.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 22);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -58,7 +58,7 @@ public class Topic extends AppCompatActivity {
         gk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 9);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -70,7 +70,7 @@ public class Topic extends AppCompatActivity {
         cs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 18);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -82,7 +82,7 @@ public class Topic extends AppCompatActivity {
         sports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 21);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -94,7 +94,7 @@ public class Topic extends AppCompatActivity {
         art.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 25);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -106,7 +106,7 @@ public class Topic extends AppCompatActivity {
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 23);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -118,7 +118,7 @@ public class Topic extends AppCompatActivity {
         music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 12);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -130,7 +130,7 @@ public class Topic extends AppCompatActivity {
         videoGames.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 15);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
@@ -142,7 +142,7 @@ public class Topic extends AppCompatActivity {
         politics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i = new Intent(getApplicationContext(), Quiz.class);
+                i = new Intent(getApplicationContext(), Multiplayer.class);
                 i.putExtra("topic", 24);
 
                 Log.i("TAG", "onClick: PASSING VALUE");
