@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Random;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
@@ -46,11 +50,32 @@ public class Quiz extends AppCompatActivity {
     int category;
     boolean questionType = true;
 
+    // The following are used for the shake detection
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+    private ShakeDetector mShakeDetector;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        // ShakeDetector initialization
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager
+                .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mShakeDetector = new ShakeDetector();
+        mShakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
+
+            @Override
+            public void onShake(int count) {
+
+                //LoadQ();
+                setQuestionView();
+                // TODO: ADD call to change question.
+            }
+        });
 
 
         questionTextView = findViewById(R.id.question);
@@ -126,6 +151,18 @@ public class Quiz extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    public void onPause(){
+        mSensorManager.unregisterListener(mShakeDetector);
+        super.onPause();
     }
 
     // when user presses on one of the answers
@@ -381,12 +418,15 @@ public class Quiz extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Loading... Please wait...",Toast.LENGTH_LONG).show();
             }
         });
-// Add the request to the RequestQueue.
+        // Add the request to the RequestQueue.
         requestQueue.add(stringRequest);
 
     }
 
 
+    // Shake causes some logic issues here. Shake does change the question but it seems random
+    // Should probably have the question step forward.
+    // Getting to 10/10 questions causes crash.
     private void setQuestionView() {
 
         currentQ = question.get(qid);
