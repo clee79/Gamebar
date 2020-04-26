@@ -28,6 +28,7 @@ public class Multiplayer extends AppCompatActivity {
 
         gamestate = new Intent(getApplicationContext(), Quiz.class);
         gamestate.putExtra("topic", category);
+        gamestate.putExtra("Index", 1);
 
         final GameplayManager gameplayManager = new GameplayManager();
 
@@ -36,8 +37,7 @@ public class Multiplayer extends AppCompatActivity {
         p1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gameplayManager.SetPlayerCount(1);
-                gamestate.putExtra("players", gameplayManager.getNumOfPlayers());
+                gamestate.putExtra("players", 1);
                 startActivity(gamestate);
             }
         });
@@ -45,8 +45,7 @@ public class Multiplayer extends AppCompatActivity {
         p2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gameplayManager.SetPlayerCount(2);
-                gamestate.putExtra("players", gameplayManager.getNumOfPlayers());
+                gamestate.putExtra("players", 2);
                 startActivity(gamestate);
             }
         });
@@ -54,8 +53,7 @@ public class Multiplayer extends AppCompatActivity {
         p3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gameplayManager.SetPlayerCount(3);
-                gamestate.putExtra("players", gameplayManager.getNumOfPlayers());
+                gamestate.putExtra("players", 3);
                 startActivity(gamestate);
             }
         });
@@ -63,8 +61,7 @@ public class Multiplayer extends AppCompatActivity {
         p4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gameplayManager.SetPlayerCount(4);
-                gamestate.putExtra("players", gameplayManager.getNumOfPlayers());
+                gamestate.putExtra("players", 4);
                 startActivity(gamestate);
             }
         });

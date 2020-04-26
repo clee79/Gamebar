@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,13 +32,18 @@ public class Summary extends AppCompatActivity {
     int topic, score;
     TextView topicName, questions, correct;
     Intent intent;
-    Button continu, restart;
+    Button continu, restart, nextplayer;
 
     // Establish connection to firebase
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     FirebaseFirestore fStore;
     String userID;
+
+    GameplayManager gameplayManager;
+
+    int currentPlayer, index;
+    int[] playerArray;
 
 
     @Override
@@ -50,24 +56,50 @@ public class Summary extends AppCompatActivity {
         correct = findViewById(R.id.correctTextView);
         continu = findViewById(R.id.continueButton);
         restart = findViewById(R.id.newTopicButton);
+        nextplayer = findViewById(R.id.nextPlayer);
+        nextplayer.setVisibility(View.GONE);
+
 
         // get score
         Bundle b = getIntent().getExtras();
         score = b.getInt("Score");
         topic = b.getInt("Topic");
         key = b.getString("Key");
+        currentPlayer = b.getInt("players");
+        index = b.getInt("Index");
+
+        // check if multiplayer and inside loop state
+        if(currentPlayer > 1 && index + 1 < currentPlayer + 1){
+            nextplayer.setVisibility(View.VISIBLE);
+            nextplayer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Logic to loop to next game player.
+                    Intent gameLoop = new Intent(getApplicationContext(), Quiz.class);
+                    gameLoop.putExtra("topic", topic);
+                    index++;
+                    gameLoop.putExtra("Index", index);
+                    gameLoop.putExtra("players", currentPlayer);
+                    startActivity(gameLoop);
+                }
+            });
+        }
 
         topicName.setText(getTopicName(topic));
         questions.setText("Question : " + 10);
         correct.setText("Score : "+score);
 
         // Firebase declarations
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseUser = firebaseAuth.getCurrentUser();
-        userID = firebaseUser.getUid();
+        // Make sure we're not updating the db with multiplayer data.
+        // Only update if 1 player.
+        if(currentPlayer < 2) {
+            firebaseAuth = FirebaseAuth.getInstance();
+            firebaseUser = firebaseAuth.getCurrentUser();
+            userID = firebaseUser.getUid();
 
-        // Save data to database
-        storeGameScore(topic, score);
+            // Save data to database
+            storeGameScore(topic, score);
+        }
 
         restart.setOnClickListener(new View.OnClickListener() {
             @Override

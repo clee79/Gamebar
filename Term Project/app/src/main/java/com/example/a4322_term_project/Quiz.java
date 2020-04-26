@@ -55,7 +55,7 @@ public class Quiz extends AppCompatActivity {
     private Sensor mAccelerometer;
     private ShakeDetector mShakeDetector;
 
-    GameplayManager gameplayManager;
+    int playerCount, index;
 
 
     @Override
@@ -91,13 +91,11 @@ public class Quiz extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         category = bundle.getInt("topic");
-        int playercounter = bundle.getInt("players");
         Log.i("TAG", "CATEGORY -> " + Integer.toString(category));
 
-        gameplayManager = new GameplayManager(playercounter,new int[playercounter], 0);
-        gameplayManager.SetupGame();
-        playerNumber = gameplayManager.getCurrentPlayerIndex();
-
+        // Setup the game
+        playerCount = bundle.getInt("players");
+        index = bundle.getInt("Index");
 
         LoadQ();
 
@@ -255,9 +253,8 @@ public class Quiz extends AppCompatActivity {
                     i.putExtra("Score", score);
                     i.putExtra("Topic", category);
                     i.putExtra("Key", key);
-                    i.putExtra("Player", gameplayManager.getCurrentPlayerIndex());
-                    i.putExtra("PlayerS", gameplayManager.getPlayerIndex());
-                    i.putExtra("Index", gameplayManager.getIndex());
+                    i.putExtra("players", playerCount);
+                    i.putExtra("Index", index);
                     startActivity(i);
                     Log.d("tag", "run: -> intent passed" );
 
@@ -500,7 +497,7 @@ public class Quiz extends AppCompatActivity {
         optionD.setEnabled(true);
         // Set question number view
         questionNumber.setText("Question " + (qcount + 1) + "/10");
-        player.setText("Player #" + playerNumber);
+        player.setText("Player #" + index);
         qcount++;
         qid++;
     }
