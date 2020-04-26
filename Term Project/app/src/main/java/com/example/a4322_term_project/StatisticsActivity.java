@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -27,8 +28,14 @@ import java.util.ArrayList;
 
 public class StatisticsActivity extends AppCompatActivity {
     final String TAG = "DB";
+    FirebaseFirestore firestore;
+    FirebaseAuth auth;
+    FirebaseUser user;
+    String userID;
+
     ListView listView;
     ArrayList<String> array = new ArrayList<>();
+    ArrayList<Stat> statArray = new ArrayList<>();
     TextView statsTV;
     ImageView back;
     int totalGames;
@@ -40,6 +47,12 @@ public class StatisticsActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         statsTV = findViewById(R.id.tvUserInfo);
         back = findViewById(R.id.backButtonDrawable);
+
+        // Firebase
+        firestore = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        userID = user.getUid();
 
         setWelcome();
         getStats();
@@ -56,39 +69,28 @@ public class StatisticsActivity extends AppCompatActivity {
 
     private void getStats() {
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference quizCollectionReference = db.collection("quiz");
-
+        CollectionReference quizCollectionReference = firestore.collection("quiz");
 
         Query query = quizCollectionReference
-                .whereEqualTo("userID",
-                        FirebaseAuth.getInstance().getCurrentUser().getUid());
+                .whereEqualTo("userID", userID);
 
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
+                        Stat game = document.toObject(Stat.class);
 
-                        Stat newStat = new Stat();
+                        Log.i(TAG, "TEST OBJECT: userID -> " + game.getUserID());
+                        Log.i(TAG, "TEST OBJECT: topic -> " + game.getTopic());
+                        Log.i(TAG, "TEST OBJECT: score -> " + game.getScore());
+                        Log.i(TAG, "TEST OBJECT: date -> " + game.getDate());
 
-                        newStat.setUserID(document.getData().get("userID").toString());
-                        newStat.setTopic(document.getData().get("topic").toString());
-                        newStat.setScore(document.getData().get("correct").toString());
-                        newStat.setDate(document.getData().get("data").toString());
+                        array.add(game.getDate());
+                        array.add(game.getTopic());
+                        array.add(game.getScore());
 
-                        Log.i(TAG, "TEST OBJECT: userID -> " + newStat.getUserID());
-                        Log.i(TAG, "TEST OBJECT: topic -> " + newStat.getTopic());
-                        Log.i(TAG, "TEST OBJECT: score -> " + newStat.getScore());
-                        Log.i(TAG, "TEST OBJECT: date -> " + newStat.getDate());
-
-
-                        //array.add(newStat);
-                        array.add("DATE: " + newStat.getDate());
-                        array.add("TOPIC: " + newStat.getTopic());
-                        array.add("SCORE: " + newStat.getScore());
-
-                        ArrayAdapter adapter = new ArrayAdapter<String>(StatisticsActivity.this, android.R.layout.simple_list_item_1, array);
+                        ArrayAdapter adapter = new ArrayAdapter<>(StatisticsActivity.this, android.R.layout.simple_list_item_1, array);
                         listView.setAdapter(adapter);
                         Log.i(TAG, "getStats: array: " + array);
 

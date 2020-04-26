@@ -292,21 +292,17 @@ public class UserProfile extends AppCompatActivity {
 
                     // for fav category
                     ArrayList<String> categoryList = new ArrayList<>();
-                    String temp;
-                    int tempForNulValues;
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         // track for percentage correct
-                        Object obj = document.getData().get("correct");
 
-                        if (obj == null) {
-                            tempForNulValues = 0;
-                            totalCorrect += tempForNulValues;
-                        } else {
-                            totalCorrect += Integer.parseInt(obj.toString());
-                        }
+                        Stat game = document.toObject(Stat.class);
+
+                        // for percent
+                        totalCorrect += Integer.parseInt(game.getScore());
 
                         // track for fav category
-                        categoryList.add(document.getData().get("topic").toString());
+                        categoryList.add(game.getTopic());
+
                         // track for percentage
                         totalGames++;
                     }
@@ -327,7 +323,7 @@ public class UserProfile extends AppCompatActivity {
                         percent = totalCorrect * 1.0;
                         percent = percent / (totalGames * 10.0);
                         percent *= 100.0;
-                        formatDecimal(percent);
+                        percent = formatDecimal(percent);
                         percentage.setText(percent + "%");
                     } else {
                         percentage.setText("No data");
@@ -361,9 +357,10 @@ public class UserProfile extends AppCompatActivity {
         return mostRepeated.getKey();
     }
 
-    public void formatDecimal (double d) {
+    public double formatDecimal (double d) {
+        double formatted;
         NumberFormat formatter = new DecimalFormat("#0.00");
-        formatter.format(d);
+        return formatted = Double.parseDouble(formatter.format(d));
     }
 
 }
