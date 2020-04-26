@@ -161,9 +161,16 @@ public class Quiz extends AppCompatActivity {
 
     @Override
     public void onPause(){
-        mSensorManager.unregisterListener(mShakeDetector);
         super.onPause();
+        mSensorManager.unregisterListener(mShakeDetector);
     }
+    @Override
+    public void onStop() {
+        super.onStop();
+        mSensorManager.unregisterListener(mShakeDetector);
+
+    }
+
 
     // when user presses on one of the answers
     void handleButtonClick(int selectedAnswer) {
@@ -205,6 +212,7 @@ public class Quiz extends AppCompatActivity {
             else
                 optionB.setBackgroundResource(R.drawable.button_wrong);
         }
+
         if (selectedAnswer == 3) {
             if (optionC.getText().toString().equals(currentQuestion.get(qid-1).getANSWER()))
                 score++;
@@ -225,11 +233,15 @@ public class Quiz extends AppCompatActivity {
         // if at the end, after the last question pass it off to
         // summary screen to show the stats
         if (qcount == 9) {
+            Log.d("tag", "run: -> " + qcount);
+
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    Log.d("tag", "run: -> inside run() before intent" );
 
-                    Intent i = new Intent(getApplicationContext(), Summary.class);
+                    Intent i = new Intent(Quiz.this, Summary.class);
+                    Log.d("tag", "run: -> inside run() after intent" );
 
                     qcount = 0;
 
@@ -237,6 +249,8 @@ public class Quiz extends AppCompatActivity {
                     i.putExtra("Topic", category);
                     i.putExtra("Key", key);
                     startActivity(i);
+                    Log.d("tag", "run: -> intent passed" );
+
                     finish();
 
                 }
@@ -246,15 +260,13 @@ public class Quiz extends AppCompatActivity {
         }
         // if there are more questions, keep displaying them
         else {
-
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     setQuestionView();
+                    Log.d("tag", "run: -> " + qcount);
                 }
             }, 1000);
-
-
         }
 
 

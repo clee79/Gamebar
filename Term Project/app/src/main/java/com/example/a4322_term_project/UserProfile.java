@@ -39,7 +39,7 @@ import java.util.Map;
 
 public class UserProfile extends AppCompatActivity {
     final String TAG = "DB";
-    int totalGames, totalCorrect = 0;
+    int totalGames = 0, totalCorrect = 0;
     double percent;
     Intent intent;
     Button edit, signout, done;
@@ -214,7 +214,6 @@ public class UserProfile extends AppCompatActivity {
 
     private void loadUserInformation() {
 
-
             documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
                 @Override
                 public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
@@ -287,35 +286,45 @@ public class UserProfile extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                // for fav category
-                ArrayList<String> categoryList = new ArrayList<>();
-
-
                 // Get total Games
                 if (task.isSuccessful()) {
+
+                    // for fav category
+                    ArrayList<String> categoryList = new ArrayList<>();
+
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         // track for percentage correct
                         totalCorrect += Integer.parseInt(document.getData().get("correct").toString());
+                        Log.d(TAG, "onComplete: TOTAL CORRECT ->" + totalCorrect);
 
                         // track for fav category
                         categoryList.add(document.getData().get("topic").toString());
-
                         // track for percentage
                         totalGames++;
+
+
                     }
 
                     // Set how many games text
                     games.setText(Integer.toString(totalGames));
 
                     // Set favorite category
-                    getMostCommonCategory(categoryList);
-                    category.setText(getMostCommonCategory(categoryList));
+                    if (categoryList.isEmpty()) {
+                        category.setText("No favorites yet.");
+                    } else {
+                        getMostCommonCategory(categoryList);
+                        category.setText(getMostCommonCategory(categoryList));
+                    }
 
                     // Set percentage correct
-                    percent = totalCorrect * 1.0;
-                    percent = percent / (totalGames * 10.0);
-                    percent *= 100.0;
-                    percentage.setText(percent + "%");
+                    if (totalGames > 0) {
+                        percent = totalCorrect * 1.0;
+                        percent = percent / (totalGames * 10.0);
+                        percent *= 100.0;
+                        percentage.setText(percent + "%");
+                    } else {
+                        percentage.setText("No data");
+                    }
 
                 } else {
                     Log.i(TAG, "getStats: oops error");
@@ -325,6 +334,7 @@ public class UserProfile extends AppCompatActivity {
     }
     public String getMostCommonCategory(ArrayList<String> arrayList) {
         Map<String, Integer> stringsCount = new HashMap<>();
+
         for(String s: arrayList) {
 
             Integer c = stringsCount.get(s);

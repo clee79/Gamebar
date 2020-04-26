@@ -1,5 +1,6 @@
 package com.example.a4322_term_project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,8 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,9 +35,8 @@ public class Summary extends AppCompatActivity {
 
     // Establish connection to firebase
     FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
     FirebaseFirestore fStore;
-    DocumentReference documentReference;
-    FirebaseDatabase firebaseDatabase;
     String userID;
 
 
@@ -58,6 +61,10 @@ public class Summary extends AppCompatActivity {
         questions.setText("Question : " + 10);
         correct.setText("Score : "+score);
 
+        // Firebase declarations
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        userID = firebaseUser.getUid();
 
         // Save data to database
         storeGameScore(topic, score);
@@ -118,21 +125,41 @@ public class Summary extends AppCompatActivity {
     }
 
     public void storeGameScore (int topic, int right) {
-        // get current user id
-        userID = firebaseAuth.getCurrentUser().getUid();
         // Get random key for document
         String key = getKey();
+
         String dbTopic = getTopicName(topic);
         String dbCorrect = Integer.toString(right);
         String dbQuizDate = getDate();
-        int dbTotalGames = 1;
+        String dbUserID = userID;
 
         // Storing in database
-        DocumentReference documentReference = fStore.collection("quiz").document(key);
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        DocumentReference newGameRef = firestore.collection("quiz").document();
+        Stat game = new Stat();
+
+        game.setDate(dbQuizDate);
+        game.setTopic(dbTopic);
+        game.setScore(dbCorrect);
+        game.setUserID(dbUserID);
+
+        newGameRef.set(game).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.d("tag", "onComplete: COMPLETE");
+                } else {
+                    Log.d("tag", "onComplete: FAILURE");
+
+                }
+            }
+        });
+
 
         Log.d("TAG", "GENERATED KEY " + key);
 
         // insert data to map
+        /*
         Map <String, Object> quiz = new HashMap<>();
         quiz.put("userID", userID);
         quiz.put("topic", dbTopic);
@@ -145,7 +172,7 @@ public class Summary extends AppCompatActivity {
             public void onSuccess(Void aVoid) {
                 Log.d("DB", "onSuccess: user profile is created -> " + userID);
             }
-        });
+        });*/
     }
 
     public String getDate() {
@@ -155,22 +182,6 @@ public class Summary extends AppCompatActivity {
 
         return strDate;
     }
-    /*
-    public int getCurrentGames () {
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                if (documentSnapshot != null && documentSnapshot.getLong("totalGames").intValue() > 0) {
-                    Log.i("TAG", "onEvent: GOT TO CURRENT GAMES");
-                } else {
-                    return;
-                }
-            }
-        });
-
-        return currentGamesPlayed;
-
-    }*/
 
     public String getKey () {
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -192,9 +203,4 @@ public class Summary extends AppCompatActivity {
 
         return sb.toString();
     }
-
-
-
-
-
 }
