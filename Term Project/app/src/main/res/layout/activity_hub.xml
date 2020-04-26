@@ -10,9 +10,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="50dp"
         android:text="The Hub"
-        android:textSize="32sp"
+        android:textColor="@color/darkGray"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/profileButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -25,6 +26,8 @@
         android:layout_marginEnd="161dp"
         android:layout_marginBottom="17dp"
         android:text="@string/profile"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         app:layout_constraintBottom_toTopOf="@+id/statsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -37,6 +40,8 @@
         android:layout_marginEnd="161dp"
         android:layout_marginBottom="15dp"
         android:text="Stats"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         app:layout_constraintBottom_toTopOf="@+id/triviaButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -47,6 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="19dp"
         android:text="@string/qrScan"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         app:layout_constraintBottom_toTopOf="@+id/logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,6 +66,8 @@
         android:layout_marginEnd="161dp"
         android:layout_marginBottom="136dp"
         android:text="@string/logout"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -71,6 +80,8 @@
         android:layout_marginEnd="152dp"
         android:layout_marginBottom="13dp"
         android:text="@string/playTrivia"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         app:layout_constraintBottom_toTopOf="@+id/qrButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

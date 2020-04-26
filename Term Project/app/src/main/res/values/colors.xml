@@ -8,5 +8,6 @@
     <color name="grayLight">#fafafa</color>
     <color name="gray">#E8EBEC</color>
     <color name="darkGray">#253A4B</color>
+    <color name="lightlightGray">#CCCCCC</color>
 
 </resources>
