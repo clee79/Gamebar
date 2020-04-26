@@ -76,10 +76,9 @@ public class Login extends AppCompatActivity {
                 FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
  
                 if (firebaseUser != null) {
-                    intent = new Intent(getApplicationContext(), UserProfile.class);
+                    intent = new Intent(getApplicationContext(), Hub.class);
                 } else {
                     return;
-                    // Toast.makeText(Login.this, "Login failed. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -112,7 +111,7 @@ public class Login extends AppCompatActivity {
         // If user is already logged in, go straight to UserProfile activity
         if (mFirebaseAuth.getCurrentUser() != null) {
             finish();
-            intent = new Intent(this, UserProfile.class);
+            intent = new Intent(this, Hub.class);
             startActivity(intent);
         }
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
@@ -144,7 +143,7 @@ public class Login extends AppCompatActivity {
                                 email.requestFocus();
                             } else {
                                 Log.d("FIREBASE USER LOGIN", FirebaseAuth.getInstance().getCurrentUser().toString());
-                                intent = new Intent(getApplicationContext(), UserProfile.class);
+                                intent = new Intent(getApplicationContext(), Hub.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();

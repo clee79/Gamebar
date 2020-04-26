@@ -40,7 +40,6 @@ import java.util.Map;
 public class UserProfile extends AppCompatActivity {
     final String TAG = "DB";
     int totalGames, totalCorrect = 0;
-    ;
     double percent;
     Intent intent;
     Button edit, signout, done;
