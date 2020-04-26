@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradientbackground">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:gravity="center_horizontal"
         android:text="Select the number of players"
         android:textSize="30sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,6 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="87dp"
         android:text="1"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/p2"
         app:layout_constraintStart_toStartOf="parent" />
@@ -34,6 +40,8 @@
         android:layout_marginStart="54dp"
         android:layout_marginTop="57dp"
         android:text="2"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/p1"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -43,6 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/p4"
         app:layout_constraintStart_toStartOf="@+id/p1" />
@@ -53,6 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="37dp"
         android:text="4"
+        android:background="@drawable/buttonstyle"
+        android:textColor="@color/grayLight"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/p2"
         app:layout_constraintTop_toBottomOf="@+id/p2" />
