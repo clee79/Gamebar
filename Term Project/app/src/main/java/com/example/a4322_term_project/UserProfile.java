@@ -5,8 +5,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -55,6 +57,9 @@ public class UserProfile extends AppCompatActivity {
     // Reference variable
     private static UserProfile instance = null;
 
+    private static final String KEY_TABLE = "Table";
+    private static final String Key_REST = "Restaurant";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +92,11 @@ public class UserProfile extends AppCompatActivity {
         // TODO -> QUESTION TO CHRIS: SAVE THIS IN DB? OR JUST CHANGE WHEN QR RECEIVES THIS INFO?
         restaurantID = findViewById(R.id.restaurantID);
         tableID = findViewById(R.id.tableID);
+
+        // QR INFO
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("myQRPreference", Context.MODE_PRIVATE);
+        restaurantID.setText(sharedPreferences.getString("Restaurant","??"));
+        tableID.setText(sharedPreferences.getString("Table","??"));
 
         // Loads all banner stats
         getAllBannerInformation();

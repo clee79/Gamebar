@@ -3,6 +3,7 @@ package com.example.a4322_term_project;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -22,6 +24,7 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.firebase.firestore.auth.User;
 
 import java.io.IOException;
 
@@ -34,6 +37,11 @@ public class QRCodeProcessor extends AppCompatActivity {
     TextView textView;
     BarcodeDetector barcodeDetector;
 
+    String tableID, restID;
+    private static final String PREFERENCE_KEY = "myQRPreference";
+    private static final String KEY_TABLE = "Table";
+    private static final String KEY_REST = "Restaurant";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +50,10 @@ public class QRCodeProcessor extends AppCompatActivity {
         surfaceView = (SurfaceView) findViewById(R.id.cameraPreview);
         textView = (TextView) findViewById(R.id.barcodeText);
         backButton = findViewById(R.id.backButtonDrawable);
+
+        Context context = getApplicationContext();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +114,16 @@ public class QRCodeProcessor extends AppCompatActivity {
                             Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
                             textView.setText(qrCodes.valueAt(0).displayValue);
+
+                            String raw = textView.getText().toString();
+
+                            int splitPosition = raw.indexOf(",");
+                            tableID = raw.substring(0,splitPosition);
+                            restID = raw.substring(splitPosition+1);
+
+                            editor.putString(KEY_TABLE, tableID);
+                            editor.putString(KEY_REST, restID);
+                            editor.apply();
 
                         }
                     });
