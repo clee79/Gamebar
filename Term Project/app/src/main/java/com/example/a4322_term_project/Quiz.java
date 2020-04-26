@@ -29,13 +29,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Quiz extends AppCompatActivity {
-
+    // TODO -> Will need to update this based on who is player
+    int playerNumber = 1;
     int score = 0;
     int qid = 0;
     int qcount = 0;
 
     String url;
-    TextView questionTextView;
+    TextView questionTextView, questionNumber, player;
     Button optionA, optionB, optionC, optionD;
     QuestionFormat currentQ, currentAnswerQ;
     ArrayList<QuestionFormat> question = new ArrayList<>();
@@ -53,6 +54,9 @@ public class Quiz extends AppCompatActivity {
 
 
         questionTextView = findViewById(R.id.question);
+        questionNumber = findViewById(R.id.questionNumberTextView);
+        player = findViewById(R.id.playerTextView);
+
         optionA = findViewById(R.id.buttonA);
         optionB = findViewById(R.id.buttonB);
         optionC = findViewById(R.id.buttonC);
@@ -60,8 +64,7 @@ public class Quiz extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         category = bundle.getInt("topic");
-        Log.i("TAG", "CATEGORY -> " +Integer.toString(category));
-
+        Log.i("TAG", "CATEGORY -> " + Integer.toString(category));
 
 
         LoadQ();
@@ -179,10 +182,7 @@ public class Quiz extends AppCompatActivity {
                 optionD.setBackgroundResource(R.drawable.button_wrong);
         }
 
-        // TODO -> Topic select screen (so far just 1)
-        // TODO -> If question count == 9, pass it off to summary screen and show stats
-        // TODO -> Database stuff
-        // TODO -> Make it look nicer
+        // TODO -> Make it look nicer?
         // TODO -> Multiple instances
 
         // if at the end, after the last question pass it off to
@@ -374,9 +374,6 @@ public class Quiz extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Loading... Please wait...",Toast.LENGTH_LONG).show();
 
                         }
-
-
-
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -439,6 +436,9 @@ public class Quiz extends AppCompatActivity {
         optionB.setEnabled(true);
         optionC.setEnabled(true);
         optionD.setEnabled(true);
+        // Set question number view
+        questionNumber.setText("Question " + (qcount + 1) + "/10");
+        player.setText("Player #" + playerNumber);
         qcount++;
         qid++;
     }
