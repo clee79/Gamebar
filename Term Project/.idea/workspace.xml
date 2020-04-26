@@ -12,9 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46ec2677-d69d-4d89-8d7b-7ed57ee677c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatisticsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatisticsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_multiplayer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_multiplayer.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +24,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="LMX320640e96bc" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -41,101 +40,128 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="294" selection-start-line="294" selection-end-line="294" />
+            <state relative-caret-position="-147">
+              <caret line="73" column="67" selection-start-line="73" selection-start-column="67" selection-end-line="73" selection-end-column="67" />
               <folding>
-                <element signature="method#onStart#0;class#UserProfile#0" />
-                <element signature="method#getUserProfileInstance#0;class#UserProfile#0" />
-                <element signature="method#dialogBuilderSignOut#0;class#UserProfile#0" />
-                <element signature="method#signoutUser#0;class#UserProfile#0" />
-                <element signature="method#loadUserInformation#0;class#UserProfile#0" />
-                <element signature="method#saveUserInformation#0;class#UserProfile#0" />
-                <element signature="e#7661#8545#1" />
-                <element signature="e#9933#11831#0" expanded="true" />
-                <element signature="e#11830#11831#0" expanded="true" />
-                <element signature="method#getMostCommonCategory#0;class#UserProfile#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatisticsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
-              <folding>
-                <element signature="e#2343#4963#0" expanded="true" />
-                <element signature="e#4962#4963#0" expanded="true" />
-                <element signature="e#4010#4051#1" />
-                <element signature="e#3773#3774#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2090#2308#0" expanded="true" />
+                <element signature="e#2307#2308#0" expanded="true" />
+                <element signature="e#7175#7913#0" expanded="true" />
+                <element signature="e#7912#7913#0" expanded="true" />
+                <element signature="e#8048#8252#0" expanded="true" />
+                <element signature="e#8251#8252#0" expanded="true" />
+                <element signature="e#11884#12908#0" expanded="true" />
+                <element signature="e#12907#12908#0" expanded="true" />
+                <element signature="method#networkError#0;class#Quiz#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2094">
-              <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7112#7552#0" expanded="true" />
-                <element signature="e#7551#7552#0" expanded="true" />
-                <element signature="e#7716#7886#0" expanded="true" />
-                <element signature="e#7885#7886#0" expanded="true" />
-                <element signature="method#parseJson#0;class#Quiz#0" />
-                <element signature="method#onActivityResult#0;class#Quiz#0" />
-                <element signature="method#LoadQ#0;class#Quiz#0" />
-                <element signature="e#11468#12492#0" expanded="true" />
-                <element signature="e#12491#12492#0" expanded="true" />
-                <element signature="e#12494#12741#0" expanded="true" />
-                <element signature="e#12740#12741#0" expanded="true" />
-                <element signature="method#setQuestionView#0;class#Quiz#0" />
-                <element signature="method#networkError#0;class#Quiz#0" />
-                <element signature="e#15270#15776#0" expanded="true" />
-                <element signature="e#15775#15776#0" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_multiplayer.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="143" column="33" lean-forward="true" selection-start-line="143" selection-start-column="33" selection-end-line="143" selection-end-column="33" />
+            <state relative-caret-position="-136">
+              <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
               <folding>
-                <element signature="method#onNewIntent#0;class#Summary#0" />
-                <element signature="method#getTopicName#0;class#Summary#0" />
-                <element signature="e#4368#4674#0" expanded="true" />
-                <element signature="e#4673#4674#0" expanded="true" />
-                <element signature="method#getKey#0;class#Summary#0" />
+                <element signature="e#2210#2390#0" expanded="true" />
+                <element signature="e#2389#2390#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="1207">
+              <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+            <state relative-caret-position="867">
+              <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Multiplayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
               <folding>
-                <element signature="e#2315#2316#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1109#1302#0" expanded="true" />
+                <element signature="e#1301#1302#0" expanded="true" />
+                <element signature="e#1427#1676#0" expanded="true" />
+                <element signature="e#1675#1676#0" expanded="true" />
+                <element signature="e#1745#1994#0" expanded="true" />
+                <element signature="e#1993#1994#0" expanded="true" />
+                <element signature="e#2063#2312#0" expanded="true" />
+                <element signature="e#2311#2312#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Login.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Topic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+            <state relative-caret-position="1241">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/GameplayManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="51" selection-start-line="51" selection-end-line="62" selection-end-column="5" />
+              <folding>
+                <element signature="e#239#240#0" expanded="true" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#927#928#0" expanded="true" />
+                <element signature="e#967#968#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,8 +171,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
         <option value="Class" />
       </list>
     </option>
@@ -162,10 +188,11 @@
       <find>cans</find>
       <find>request</find>
       <find>firebase</find>
-      <find>qcount</find>
-      <find>setquesti</find>
       <find>UserProfile</find>
       <find>Quiz</find>
+      <find>setquesti</find>
+      <find>player</find>
+      <find>qcount</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,11 +219,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background_topic_select.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/button_style_select_topic.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/TopicIcon.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Topic.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_topic.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/buttonstyle_white.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_hub.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatRecycler.java" />
@@ -208,23 +232,29 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/IMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatisticsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/ShakeDetector.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/QRWorker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/QRCodeProcessor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatisticsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Topic.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/GameplayManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Multiplayer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_multiplayer.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="207" />
-    <option name="y" value="23" />
-    <option name="width" value="1185" />
-    <option name="height" value="877" />
+    <option name="x" value="1059" />
+    <option name="y" value="102" />
+    <option name="width" value="1551" />
+    <option name="height" value="1401" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -232,40 +262,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="a4322_term_project" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,7 +278,74 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="a4322_term_project" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java (generated)" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java (generated)" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="a4322_term_project" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res (generated)" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="4322_Term_Project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res (generated)" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,11 +462,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="-8" y="-8" width="1840" height="1192" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.24964234" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.27682403" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2767154" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -412,7 +475,7 @@
       <window_info id="Resources Explorer" order="7" weight="0.32971016" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32866243" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" visible="true" weight="0.32866243" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49928468" visible="true" weight="0.32797733" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32866243" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.27261147" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5007153" side_tool="true" weight="0.32866243" />
@@ -459,23 +522,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="62" column="31" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/frombottom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_person_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/QuestionExample.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_question_example.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_key.xml" />
@@ -505,17 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="8" lean-forward="true" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#166#167#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -571,7 +606,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_topic.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="119">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
@@ -581,29 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
           <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
@@ -655,16 +667,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/IMainActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Topic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Signup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
+        <state relative-caret-position="1377">
           <caret line="174" selection-start-line="174" selection-end-line="174" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -673,9 +678,17 @@
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4091172a7f2a34ad1c80123b134e1d9a/jetified-firebase-firestore-21.4.0/jars/classes.jar!/com/google/firebase/firestore/FirebaseFirestore.class" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Stat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="170">
           <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding>
             <element signature="e#166#167#0" expanded="true" />
@@ -697,22 +710,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="67" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="67" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatisticsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="68">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3895#3896#0" expanded="true" />
+            <element signature="e#3935#3936#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/ShakeDetector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4091172a7f2a34ad1c80123b134e1d9a/jetified-firebase-firestore-21.4.0/jars/classes.jar!/com/google/firebase/firestore/DocumentReference.class" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/QRWorker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding>
             <element signature="e#290#291#0" expanded="true" />
             <element signature="e#332#333#0" expanded="true" />
@@ -722,127 +760,149 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/QRCodeProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="41" column="45" lean-forward="true" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="50" />
+        <state relative-caret-position="-153">
+          <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Key.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#166#167#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Hub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="21" column="46" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="21" selection-end-column="46" />
           <folding>
+            <element signature="e#2160#2316#0" expanded="true" />
             <element signature="e#2315#2316#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4091172a7f2a34ad1c80123b134e1d9a/jetified-firebase-firestore-21.4.0/jars/classes.jar!/com/google/firebase/firestore/DocumentReference.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="67" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="67" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/UserProfile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/GameplayManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="294" selection-start-line="294" selection-end-line="294" />
+        <state relative-caret-position="357">
+          <caret line="51" selection-start-line="51" selection-end-line="62" selection-end-column="5" />
           <folding>
-            <element signature="method#onStart#0;class#UserProfile#0" />
-            <element signature="method#getUserProfileInstance#0;class#UserProfile#0" />
-            <element signature="method#dialogBuilderSignOut#0;class#UserProfile#0" />
-            <element signature="method#signoutUser#0;class#UserProfile#0" />
-            <element signature="method#loadUserInformation#0;class#UserProfile#0" />
-            <element signature="method#saveUserInformation#0;class#UserProfile#0" />
-            <element signature="e#7661#8545#1" />
-            <element signature="e#9933#11831#0" expanded="true" />
-            <element signature="e#11830#11831#0" expanded="true" />
-            <element signature="method#getMostCommonCategory#0;class#UserProfile#0" />
+            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/ShakeDetector.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Topic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1241">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2094">
-          <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
+        <state relative-caret-position="867">
+          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Multiplayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7112#7552#0" expanded="true" />
-            <element signature="e#7551#7552#0" expanded="true" />
-            <element signature="e#7716#7886#0" expanded="true" />
-            <element signature="e#7885#7886#0" expanded="true" />
-            <element signature="method#parseJson#0;class#Quiz#0" />
-            <element signature="method#onActivityResult#0;class#Quiz#0" />
-            <element signature="method#LoadQ#0;class#Quiz#0" />
-            <element signature="e#11468#12492#0" expanded="true" />
-            <element signature="e#12491#12492#0" expanded="true" />
-            <element signature="e#12494#12741#0" expanded="true" />
-            <element signature="e#12740#12741#0" expanded="true" />
-            <element signature="method#setQuestionView#0;class#Quiz#0" />
-            <element signature="method#networkError#0;class#Quiz#0" />
-            <element signature="e#15270#15776#0" expanded="true" />
-            <element signature="e#15775#15776#0" expanded="true" />
+            <element signature="e#1109#1302#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1427#1676#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1745#1994#0" expanded="true" />
+            <element signature="e#1993#1994#0" expanded="true" />
+            <element signature="e#2063#2312#0" expanded="true" />
+            <element signature="e#2311#2312#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Summary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="143" column="33" lean-forward="true" selection-start-line="143" selection-start-column="33" selection-end-line="143" selection-end-column="33" />
+        <state relative-caret-position="-136">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
           <folding>
-            <element signature="method#onNewIntent#0;class#Summary#0" />
-            <element signature="method#getTopicName#0;class#Summary#0" />
-            <element signature="e#4368#4674#0" expanded="true" />
-            <element signature="e#4673#4674#0" expanded="true" />
-            <element signature="method#getKey#0;class#Summary#0" />
+            <element signature="e#2210#2390#0" expanded="true" />
+            <element signature="e#2389#2390#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/StatisticsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/a4322_term_project/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+        <state relative-caret-position="-147">
+          <caret line="73" column="67" selection-start-line="73" selection-start-column="67" selection-end-line="73" selection-end-column="67" />
           <folding>
-            <element signature="e#2343#4963#0" expanded="true" />
-            <element signature="e#4962#4963#0" expanded="true" />
-            <element signature="e#4010#4051#1" />
-            <element signature="e#3773#3774#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2090#2308#0" expanded="true" />
+            <element signature="e#2307#2308#0" expanded="true" />
+            <element signature="e#7175#7913#0" expanded="true" />
+            <element signature="e#7912#7913#0" expanded="true" />
+            <element signature="e#8048#8252#0" expanded="true" />
+            <element signature="e#8251#8252#0" expanded="true" />
+            <element signature="e#11884#12908#0" expanded="true" />
+            <element signature="e#12907#12908#0" expanded="true" />
+            <element signature="method#networkError#0;class#Quiz#0" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_multiplayer.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>

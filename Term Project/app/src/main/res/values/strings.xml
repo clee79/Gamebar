@@ -49,5 +49,6 @@
     <string name="newTopic">New Topic</string>
 
     <string name="scanBar">Scan Table Barcode</string>
+    <string name="nextPlayer">Next Player</string>
 
 </resources>

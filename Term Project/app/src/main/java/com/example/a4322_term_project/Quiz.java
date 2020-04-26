@@ -33,8 +33,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Quiz extends AppCompatActivity {
-    // TODO -> Will need to update this based on who is player
-    int playerNumber = 1;
     int score = 0;
     int qid = 0;
     int qcount = 0;
@@ -55,6 +53,8 @@ public class Quiz extends AppCompatActivity {
     private Sensor mAccelerometer;
     private ShakeDetector mShakeDetector;
 
+    int playerCount, index;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +70,8 @@ public class Quiz extends AppCompatActivity {
 
             @Override
             public void onShake(int count) {
-
-                //LoadQ();
                 setQuestionView();
-                // TODO: ADD call to change question.
+                // TODO: Solve issue with game reloading on shake..
             }
         });
 
@@ -91,6 +89,9 @@ public class Quiz extends AppCompatActivity {
         category = bundle.getInt("topic");
         Log.i("TAG", "CATEGORY -> " + Integer.toString(category));
 
+        // Setup the game
+        playerCount = bundle.getInt("players");
+        index = bundle.getInt("Index");
 
         LoadQ();
 
@@ -232,7 +233,7 @@ public class Quiz extends AppCompatActivity {
 
         // if at the end, after the last question pass it off to
         // summary screen to show the stats
-        if (qcount == 9) {
+        if (qcount == 10) {
             Log.d("tag", "run: -> " + qcount);
 
             new Handler().postDelayed(new Runnable() {
@@ -248,6 +249,8 @@ public class Quiz extends AppCompatActivity {
                     i.putExtra("Score", score);
                     i.putExtra("Topic", category);
                     i.putExtra("Key", key);
+                    i.putExtra("players", playerCount);
+                    i.putExtra("Index", index);
                     startActivity(i);
                     Log.d("tag", "run: -> intent passed" );
 
@@ -387,7 +390,7 @@ public class Quiz extends AppCompatActivity {
         score = 0;
         Log.i("TAG", "LoadQ: CATCHING VALUE");
 
-        tempURL = "amount=10" + "&category=" + category;
+        tempURL = "amount=15" + "&category=" + category;
 
         url = "https://opentdb.com/api.php?" + tempURL;
 
@@ -490,7 +493,7 @@ public class Quiz extends AppCompatActivity {
         optionD.setEnabled(true);
         // Set question number view
         questionNumber.setText("Question " + (qcount + 1) + "/10");
-        player.setText("Player #" + playerNumber);
+        player.setText("Player #" + index);
         qcount++;
         qid++;
     }

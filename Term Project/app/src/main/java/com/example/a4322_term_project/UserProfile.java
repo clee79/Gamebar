@@ -98,6 +98,10 @@ public class UserProfile extends AppCompatActivity {
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("myQRPreference", Context.MODE_PRIVATE);
         restaurantID.setText(sharedPreferences.getString("Restaurant","??"));
         tableID.setText(sharedPreferences.getString("Table","??"));
+        // Clear the passed info afterwards.
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
 
         // Loads all banner stats
         getAllBannerInformation();
