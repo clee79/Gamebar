@@ -5,25 +5,13 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 
 * Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This android application was deisgned to allow users to sign into a table at a participating restaurant and allow the users to play party games at the table while they wait for the food. It is intended that this application will be extended to include order processing to allow the users to check in at a table, order food, and entertain themselves while waiting.
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
+This application runs on Android API 26 devices and higher. 
+Setup will require the use of Android studio and this code base to install the application to the target phone.
 
 ### Who do I talk to? ###
 
 * Repo owner or admin
-* Other community or team contact
